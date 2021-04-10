@@ -23,3 +23,5 @@ export { HouseIcon } from './house_icon';
 export { PageNotFoundIcon } from './page-not-found';
 export { RoundcheckOnBasic } from './roundCheck-on';
 export { RoundcheckOffBasic } from './roundCheck-off';
+export { Delete } from './delete';
+export { Sorting } from './sorting';
