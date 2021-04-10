@@ -2,16 +2,17 @@ import { CenterContentTemplate } from '../../../ui';
 
 type CenterContentProps = {
   mainNavItem: any;
-  marginTop?: string;
+  background?: string;
+  align?: string;
 };
-
 export const CenterContent: React.FC<CenterContentProps> = ({
-  mainNavItem,
-  marginTop,
   children,
+  mainNavItem,
+  align,
+  background,
 }) => {
   return (
-    <CenterContentTemplate marginTop={marginTop}>
+    <CenterContentTemplate align={align} background={background}>
       {mainNavItem}
       {children}
     </CenterContentTemplate>

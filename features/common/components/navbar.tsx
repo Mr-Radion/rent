@@ -64,12 +64,11 @@ export const LinkBottomMenu = styled(LinkPrimary)`
 
 const MainNavHeader = styled.div`
   display: flex;
-  padding: 26px 20px;
+  margin: 26px 20px 26px 20px;
   gap: 1rem;
-  > h1 {
-    font-style: normal;
+  > li a {
+    font-weight: bold;
     font-size: 18px;
-    line-height: 28px;
     letter-spacing: 0.5px;
     color: #1f1f1f;
   }

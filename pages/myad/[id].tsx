@@ -364,28 +364,40 @@ function MyAdPage({ ad }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+// export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+//   //   const response = await fetch(`https://api.rentup.cy/json?func=web&action=getOrder/${params.id}`);
+//   console.log(params);
+//   const response = await fetch('https://api.rentup.cy/json?func=mobile&action=getOrder', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json;charset=utf-8',
+//     },
+//     // body: JSON.stringify({
+//     //   id: params.id,
+//     // }),
+//   });
+//   const ad = await response.json();
+//   return {
+//     props: {
+//       ad,
+//     },
+//   };
+// };
+
+export async function getServerSideProps({ req, res, params }) {
   //   const response = await fetch(`https://api.rentup.cy/json?func=web&action=getOrder/${params.id}`);
   console.log(params);
-  const response = await fetch('https://api.rentup.cy/json?func=web&action=getOrder', {
+  const response = await fetch('https://api.rentup.cy/json?func=mobile&action=getOrder', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
-    // body: JSON.stringify({
-    //   id: params.id,
-    // }),
+    body: JSON.stringify({
+      id: params.id,
+    }),
   });
   const ad = await response.json();
-  return {
-    props: {
-      ad,
-    },
-  };
-};
-
-// export function getServerSideProps({ req, res }) {
-//   return { props: { token: req.cookies.fcd || '' } };
-// }
+  return { props: { token: req.cookies.fcd || '' } };
+}
 
 export default MyAdPage;
