@@ -1,0 +1,1032 @@
+{   "ads": [
+    {
+    "id": 1,
+    "AboutObject": {
+        "bathrooms": [
+            {
+                "id": 1,
+                "name": "1"
+            },
+            {
+                "id": 2,
+                "name": "2"
+            },
+            {
+                "id": 3,
+                "name": "3"
+            },
+            {
+                "id": 4,
+                "name": "4"
+            },
+            {
+                "id": 5,
+                "name": "5+"
+            }
+        ],
+        "bedrooms": [
+            {
+                "id": 6,
+                "name": "Studio"
+            },
+            {
+                "id": 1,
+                "name": "1"
+            },
+            {
+                "id": 2,
+                "name": "2"
+            },
+            {
+                "id": 3,
+                "name": "3"
+            },
+            {
+                "id": 4,
+                "name": "4"
+            },
+            {
+                "id": 5,
+                "name": "5+"
+            }
+        ],
+        "condition": [
+            {
+                "id": 1,
+                "name": "Basic"
+            },
+            {
+                "id": 2,
+                "name": "Design"
+            },
+            {
+                "id": 3,
+                "name": "Needs renovation"
+            }
+        ],
+        "facilities": [
+            {
+                "id": 1,
+                "name": "Kitchen furnished"
+            },
+            {
+                "id": 2,
+                "name": "Washing machine"
+            },
+            {
+                "id": 3,
+                "name": "WI-FI"
+            },
+            {
+                "id": 4,
+                "name": "TV"
+            },
+            {
+                "id": 5,
+                "name": "Smart TV"
+            },
+            {
+                "id": 6,
+                "name": "Air condition"
+            },
+            {
+                "id": 7,
+                "name": "Bath"
+            },
+            {
+                "id": 8,
+                "name": "Hot water"
+            },
+            {
+                "id": 9,
+                "name": "Private pool"
+            },
+            {
+                "id": 10,
+                "name": "Common pool"
+            },
+            {
+                "id": 11,
+                "name": "Sea view"
+            },
+            {
+                "id": 12,
+                "name": "Mountain view"
+            },
+            {
+                "id": 13,
+                "name": "Terrace"
+            },
+            {
+                "id": 14,
+                "name": "Balcony"
+            },
+            {
+                "id": 15,
+                "name": "Fireplace"
+            },
+            {
+                "id": 16,
+                "name": "Parking"
+            }
+        ],
+        "furnishing": [
+            {
+                "id": 1,
+                "name": "Fully furnished"
+            },
+            {
+                "id": 2,
+                "name": "Semi-furnished"
+            },
+            {
+                "id": 3,
+                "name": "Unfurnished"
+            },
+            {
+                "id": 4,
+                "name": "Appliences only"
+            }
+        ]
+    },
+    "PriceAndConditions": {
+        "deposit": [
+            {
+                "id": 1,
+                "name": "None"
+            },
+            {
+                "id": 2,
+                "name": "1 month"
+            },
+            {
+                "id": 3,
+                "name": "2 month"
+            },
+            {
+                "id": 4,
+                "name": "3 month"
+            }
+        ],
+        "rentperiod": [
+            {
+                "id": 1,
+                "name": "Few months"
+            },
+            {
+                "id": 2,
+                "name": "Half a year"
+            },
+            {
+                "id": 3,
+                "name": "More than a year"
+            }
+        ],
+        "commonexpences": [
+            {
+                "id": 1,
+                "name": "Included in price"
+            },
+            {
+                "id": 2,
+                "name": "Not included in price"
+            }
+        ],
+        "bills": [
+            {
+                "id": 1,
+                "name": "On the owner name"
+            },
+            {
+                "id": 2,
+                "name": "On the tenant name"
+            }
+        ]
+    }
+  }],
+  "adsRecommended": [
+    {
+      "id": 1,
+      "name": "string",
+      "price": 4000,
+      "rooms": 3,
+      "city": "string",
+      "lat": 23,
+      "lon": 45,
+      "image": "https://unsplash.com/photos/2d4lAQAlbDA"
+    },
+    {
+      "id": 2,
+      "name": "string",
+      "price": 4000,
+      "rooms": 3,
+      "city": "string",
+      "lat": 23,
+      "lon": 45,
+      "image": "https://unsplash.com/photos/2d4lAQAlbDA"
+    },
+    {
+      "id": 3,
+      "name": "string",
+      "price": 4000,
+      "rooms": 3,
+      "city": "string",
+      "lat": 23,
+      "lon": 45,
+      "image": "https://unsplash.com/photos/2d4lAQAlbDA"
+    },
+    {
+      "id": 4,
+      "name": "string",
+      "price": 4000,
+      "rooms": 3,
+      "city": "string",
+      "lat": 23,
+      "lon": 45,
+      "image": "https://unsplash.com/photos/2d4lAQAlbDA"
+    },
+    {
+      "id": 5,
+      "name": "string",
+      "price": 4000,
+      "rooms": 3,
+      "city": "string",
+      "lat": 23,
+      "lon": 45,
+      "image": "https://unsplash.com/photos/2d4lAQAlbDA"
+    },
+    {
+      "id": 6,
+      "name": "string",
+      "price": 4000,
+      "rooms": 3,
+      "city": "string",
+      "lat": 23,
+      "lon": 45,
+      "image": "https://unsplash.com/photos/2d4lAQAlbDA"
+    },
+    {
+      "id": 7,
+      "name": "string",
+      "price": 4000,
+      "rooms": 3,
+      "city": "string",
+      "lat": 23,
+      "lon": 45,
+      "image": "https://unsplash.com/photos/2d4lAQAlbDA"
+    },
+    {
+      "id": 8,
+      "name": "string",
+      "price": 4000,
+      "rooms": 3,
+      "city": "string",
+      "lat": 23,
+      "lon": 45,
+      "image": "https://unsplash.com/photos/2d4lAQAlbDA"
+    }
+  ],
+  "cities": [
+    { 
+      "district": "Lemesos",
+      "api-url": "https://cypruspost.post/api/postal-codes/get-areas?district=lemesos&lng=en",
+      "result": {
+        "items": [
+          {
+              "key": 3,
+              "name": "Anglikos Stratos Akrotiriou"
+          },
+          {
+              "key": 26,
+              "name": "Agios Athanasios"
+          },
+          {
+              "key": 28,
+              "name": "Agios Amvrosios Lemesou"
+          },
+          {
+              "key": 35,
+              "name": "Agios Georgios Lemesou"
+          },
+          {
+              "key": 39,
+              "name": "Agios Dimitrios"
+          },
+          {
+              "key": 49,
+              "name": "Agios Theodoros Lemesou"
+          },
+          {
+              "key": 52,
+              "name": "Agios Therapon"
+          },
+          {
+              "key": 54,
+              "name": "Agios Thomas"
+          },
+          {
+              "key": 57,
+              "name": "Agios Ioannis Lemesou"
+          },
+          {
+              "key": 61,
+              "name": "Agios Konstantinos"
+          },
+          {
+              "key": 62,
+              "name": "Agios Mamas"
+          },
+          {
+              "key": 68,
+              "name": "Agios Pavlos"
+          },
+          {
+              "key": 73,
+              "name": "Agios Tychon Touristiki Periochi"
+          },
+          {
+              "key": 72,
+              "name": "Agios Tychon"
+          },
+          {
+              "key": 80,
+              "name": "Agridia"
+          },
+          {
+              "key": 83,
+              "name": "Agros"
+          },
+          {
+              "key": 85,
+              "name": "Athrakos"
+          },
+          {
+              "key": 89,
+              "name": "Akapnou"
+          },
+          {
+              "key": 91,
+              "name": "Akrounta"
+          },
+          {
+              "key": 92,
+              "name": "Akrotiri"
+          },
+          {
+              "key": 95,
+              "name": "Alassa"
+          },
+          {
+              "key": 97,
+              "name": "Alektora"
+          },
+          {
+              "key": 113,
+              "name": "Anogyra"
+          },
+          {
+              "key": 115,
+              "name": "Apesia"
+          },
+          {
+              "key": 119,
+              "name": "Arakapas"
+          },
+          {
+              "key": 125,
+              "name": "Armenochori"
+          },
+          {
+              "key": 130,
+              "name": "Arsos Lemesou"
+          },
+          {
+              "key": 132,
+              "name": "Asgata"
+          },
+          {
+              "key": 139,
+              "name": "Asomatos Lemesou"
+          },
+          {
+              "key": 142,
+              "name": "Avdimou"
+          }
+        ]
+      } 
+    },
+    { 
+      "district": "Famagusta",
+      "api-url": "absent",
+      "result": {
+        "items": [
+          { "name": "Achna" },
+          { "name": "Agia" },
+          { "name": "Avgorou" },
+          { "name": "Ayia" },
+          { "name": "Deryneia" },
+          { "name": "Elias" },
+          { "name": "Frenaros" },
+          { "name": "Greko" },
+          { "name": "NapaAyia" },
+          { "name": "Kapparis" },
+          { "name": "Kokkinogremos" },
+          { "name": "Konnos" },
+          { "name": "Liopetri" },
+          { "name": "Paralimni" },
+          { "name": "Pernera" },
+          { "name": "Profitis" },
+          { "name": "Protaras" },
+          { "name": "Sotira" },
+          { "name": "Triada" },
+          { "name": "TheklaCape" },
+          { "name": "Vrysoulles" }
+        ]
+      } 
+    },
+    { 
+      "district": "Pafos",
+      "api-url": "https://cypruspost.post/api/postal-codes/get-areas?district=pafos&lng=en",
+      "result": {
+        "items": [
+          {
+              "key": 11,
+              "name": "Agia Varvara Pafou"
+          },
+          {
+              "key": 15,
+              "name": "Agia Marina Kelokedaron"
+          },
+          {
+              "key": 18,
+              "name": "Agia Marina Chrysochous"
+          },
+          {
+              "key": 19,
+              "name": "Agia Marinouda"
+          },
+          {
+              "key": 36,
+              "name": "Agios Georgios Pafou"
+          },
+          {
+              "key": 38,
+              "name": "Agios Dimitrianos"
+          },
+          {
+              "key": 56,
+              "name": "Agios Isidoros"
+          },
+          {
+              "key": 59,
+              "name": "Agios Ioannis Pafou"
+          },
+          {
+              "key": 63,
+              "name": "Agios Merkourios"
+          },
+          {
+              "key": 66,
+              "name": "Agios Nikolaos Pafou"
+          },
+          {
+              "key": 75,
+              "name": "Agios Fotios"
+          },
+          {
+              "key": 90,
+              "name": "Akoursos"
+          },
+          {
+              "key": 102,
+              "name": "Amargeti"
+          },
+          {
+              "key": 106,
+              "name": "Ampelitis"
+          },
+          {
+              "key": 108,
+              "name": "Anadiou"
+          },
+          {
+              "key": 110,
+              "name": "Anarita"
+          },
+          {
+              "key": 112,
+              "name": "Androlikou"
+          },
+          {
+              "key": 114,
+              "name": "Axylou"
+          },
+          {
+              "key": 120,
+              "name": "Argaka"
+          },
+          {
+              "key": 126,
+              "name": "Arminou"
+          },
+          {
+              "key": 127,
+              "name": "Armou"
+          },
+          {
+              "key": 135,
+              "name": "Asprogia"
+          },
+          {
+              "key": 145,
+              "name": "Acheleia"
+          },
+          {
+              "key": 167,
+              "name": "Vretsia"
+          },
+          {
+              "key": 173,
+              "name": "Galataria"
+          },
+          {
+              "key": 186,
+              "name": "Geroskipou"
+          },
+          {
+              "key": 187,
+              "name": "Giolou"
+          },
+          {
+              "key": 188,
+              "name": "Goudi"
+          },
+          {
+              "key": 194,
+              "name": "Dasikos Stathmos Agias"
+          },
+          {
+              "key": 198,
+              "name": "Dasikos Stathmos Stavrou tis Psokas"
+          }
+        ]
+      } 
+    },
+    { 
+      "district": "Larnaka",
+      "api-url": "https://cypruspost.post/api/postal-codes/get-areas?district=larnaka&lng=en",
+      "result": {
+        "items": [
+          {
+              "key": 1,
+              "name": "Avdellero"
+          },
+          {
+              "key": 4,
+              "name": "Anglikos Stratos Dekeleias"
+          },
+          {
+              "key": 6,
+              "name": "Anglisides"
+          },
+          {
+              "key": 9,
+              "name": "Agia Anna"
+          },
+          {
+              "key": 23,
+              "name": "Agioi Vavatsinias"
+          },
+          {
+              "key": 48,
+              "name": "Agios Theodoros Larnakas"
+          },
+          {
+              "key": 84,
+              "name": "Athienou"
+          },
+          {
+              "key": 93,
+              "name": "Alaminos"
+          },
+          {
+              "key": 96,
+              "name": "Alethriko"
+          },
+          {
+              "key": 111,
+              "name": "Anafotida"
+          },
+          {
+              "key": 116,
+              "name": "Aplanta"
+          },
+          {
+              "key": 118,
+              "name": "Aradippou"
+          },
+          {
+              "key": 129,
+              "name": "Arsos Larnakas"
+          },
+          {
+              "key": 149,
+              "name": "Vavatsinia"
+          },
+          {
+              "key": 150,
+              "name": "Vavla"
+          },
+          {
+              "key": 157,
+              "name": "Vasiliko"
+          },
+          {
+              "key": 164,
+              "name": "Voroklini Touristiki Periochi"
+          },
+          {
+              "key": 163,
+              "name": "Voroklini"
+          },
+          {
+              "key": 201,
+              "name": "Dekeleia"
+          },
+          {
+              "key": 202,
+              "name": "Delikipos"
+          },
+          {
+              "key": 208,
+              "name": "Drapeia"
+          },
+          {
+              "key": 209,
+              "name": "Dromolaxia"
+          },
+          {
+              "key": 235,
+              "name": "Zygi"
+          },
+          {
+              "key": 250,
+              "name": "Kalavasos"
+          },
+          {
+              "key": 254,
+              "name": "Kalo Chorio Larnakas"
+          },
+          {
+              "key": 290,
+              "name": "Kato Drys"
+          },
+          {
+              "key": 294,
+              "name": "Kato Lefkara"
+          },
+          {
+              "key": 306,
+              "name": "Kellia"
+          },
+          {
+              "key": 309,
+              "name": "Kivisili"
+          },
+          {
+              "key": 316,
+              "name": "Kiti"
+          }
+        ]
+      } 
+    },
+    { 
+      "district": "Lefkosia",
+      "api-url": "https://cypruspost.post/api/postal-codes/get-areas?district=lefkosia&lng=en",
+      "result": {
+        "items": [
+          {
+              "name": "Anglikos Stratos Lefkosias"
+          },
+          {
+              "name": "Angolemi"
+          },
+          {
+              "name": "Agia Varvara Lefkosias"
+          },
+          {
+              "name": "Agia Eirini Lefkosias"
+          },
+          {
+              "name": "Agia Marina Xyliatou"
+          },
+          {
+              "name": "Agia Marina Skyllouras"
+          },
+          {
+              "name": "Agia"
+          },
+          {
+              "name": "Agio Georgoudi"
+          },
+          {
+              "name": "Agioi Iliofotoi"
+          },
+          {
+              "name": "Agioi Trimithias"
+          },
+          {
+              "name": "Agios Vasileios"
+          },
+          {
+              "name": "Agios Georgios Kafkallou"
+          },
+          {
+              "name": "Agios Georgios Soleas"
+          },
+          {
+              "name": "Agios Dometios"
+          },
+          {
+              "name": "Agios Epifanios Oreinis"
+          },
+          {
+              "name": "Agios Epifanios Soleas"
+          },
+          {
+              "name": "Agios Theodoros Soleas"
+          },
+          {
+              "name": "Agios Theodoros Tillirias"
+          },
+          {
+              "name": "Agios Ioannis Malountas"
+          },
+          {
+              "name": "Agios Ioannis Selemani"
+          },
+          {
+              "name": "Agios Nikolaos Lefkas"
+          },
+          {
+              "name": "Agios Nikolaos Stegis"
+          },
+          {
+              "name": "Agios Sozomenos"
+          },
+          {
+              "name": "Aglantzia"
+          },
+          {
+              "name": "Agrokipia"
+          },
+          {
+              "name": "Agroladou"
+          },
+          {
+              "name": "Akaki"
+          },
+          {
+              "name": "Alampra"
+          },
+          {
+              "name": "Alevga"
+          },
+          {
+              "name": "Alithinou"
+          }
+        ]
+      } 
+    }
+  ],
+  "search_result": [
+    {
+      "id": 1,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 56,
+      "price": 1005450,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021" 
+    },
+    {
+      "id": 2,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New house",
+      "location": {
+        "district": "Limassol", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 3,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New commercial",
+      "location": {
+        "district": "Paphos", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 4,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New land",
+      "location": {
+        "district": "Famagusta", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": null,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 5,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Nicosia", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 6,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 7,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Nicosia", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 8,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 9,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 27,
+      "price": 100000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021" 
+    },
+    {
+      "id": 10,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 76,
+      "price": 1545000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 11,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 12,
+      "image_url": "https:www.cdn/...",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "area": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    }
+  ]
+}

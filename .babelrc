@@ -1,0 +1,18 @@
+{
+  "presets": [
+      "next/babel",
+      "@babel/preset-typescript"
+  ],
+  "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "ssg": true,
+        // Note: displayName will generate class names that are easier to debug
+          "displayName": true,
+          "preprocess": false
+        }
+      ]
+  ]
+}

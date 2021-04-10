@@ -1,0 +1,45 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+server.js
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+Dockerfile
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+# .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+.env.local.example
+.env.production.example
+
+# vercel
+.vercel
+
+# husky
+.husky
+
+# for a while
+/pages/about.tsx
+/pages/test.tsx

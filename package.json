@@ -1,0 +1,157 @@
+{
+  "name": "rent-up",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/RentUp/Frontend.git",
+  "author": "Mr.Radion <mr.rodion_oa@mail.ru>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev -p 4200",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ./features ./pages ./ui --ext .js,.jsx,.tsx,.ts",
+    "format": "eslint ./features ./pages ./ui --ext .js,.jsx,.tsx,.ts --fix",
+    "type-check": "tsc --pretty --noEmit",
+    "test": "./node_modules/.bin/jest",
+    "test-all": "yarn lint && yarn type-check && yarn test",
+    "server": "json-server --watch lib/mock-data/db.json --port=4201",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "analyze": "cross-env BUNDLE_ANALYZE=both next build",
+    "production": "yarn-run-all analyze export",
+    "production:clean": "rimraf out/"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "cookie": "^0.4.1",
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.2.0",
+    "next": "^10.0.6",
+    "next-redux-wrapper": "^6.0.2",
+    "react": "^17.0.1",
+    "react-content-loader": "^6.0.2",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "sharp": "^0.27.2",
+    "shortid": "^2.2.16",
+    "styled-components": "^5.2.1",
+    "swr": "^0.4.2"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.13.0",
+    "@next/bundle-analyzer": "^10.0.7",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^13.1.1",
+    "@types/classnames": "^2.2.11",
+    "@types/jest": "^26.0.20",
+    "@types/json-server": "^0.14.3",
+    "@types/next-redux-wrapper": "^3.0.0",
+    "@types/node": "^14.14.22",
+    "@types/normalize-package-data": "^2.4.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.16",
+    "@types/redux": "^3.6.0",
+    "@types/redux-saga": "^0.10.5",
+    "@types/shortid": "^0.0.29",
+    "@types/styled-components": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "autoprefixer": "^10.2.4",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-import-resolver-babel-module": "^5.2.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unicorn": "^28.0.2",
+    "husky": "^5.1.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-watch-typeahead": "^0.6.1",
+    "json-server": "^0.16.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "redux-devtools-extension": "^2.13.8",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.3"
+  },
+  "proxy": "http://localhost:4201",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(js|jsx|ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom",
+    "roots": [
+      "<rootDir>/features"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx",
+      "node"
+    ],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "babel-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/**",
+      "!**/*.d.ts'"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>[/\\\\](node_modules|.next)[/\\\\]"
+    ],
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setup-tests.ts"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "test/__mocks__/fileMock.js",
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy"
+    },
+    "clearMocks": true,
+    "collectCoverage": true,
+    "testMatch": [
+      "**/**/__tests__/*.spec.(ts|tsx|js)",
+      "**/?(*.)(spec|test).ts?(x)"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/react/"
+    ]
+  }
+}
