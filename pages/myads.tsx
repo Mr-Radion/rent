@@ -6,7 +6,20 @@ import PageNotFound from './404';
 // import { auth } from '../features/authenticate-form';
 import { filterPropertyItems, filterDistrictItems } from '../features/filters/lib';
 import { Header, Footer, CenterContent, navMainData, MainNav } from '../features/common';
-import { MainTemplate, ButtonPrimary, Delete, Sorting, H2, H3, H4, OptionPrimary } from '../ui';
+import {
+  MainTemplate,
+  ButtonPrimary,
+  Delete,
+  Sorting,
+  H2,
+  H3,
+  H4,
+  OptionPrimary,
+  OpenAd,
+  Edit,
+  Promote,
+  ShareAds,
+} from '../ui';
 import { useOnClickOutside } from '../lib/custom-hooks';
 
 const AdsWrap = styled.div`
@@ -68,6 +81,9 @@ const AdCard = styled.div`
         margin-right: 32px;
       }
     }
+    > a {
+      display: flex;
+    }
   }
   .actions {
     position: relative;
@@ -104,19 +120,13 @@ function MyAdsPage({ token }): JSX.Element {
   const userMenuRef = React.useRef();
   const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
   useOnClickOutside(userMenuRef, () => setVisiblePopup(false));
-  // @ts-ignore
-  // const [ads, setAds] = React.useState<any>([
-  //   { id: 1, name: 'Двухкомнатная квартира' },
-  //   { id: 2, name: 'Шалаш' },
-  //   { id: 3, name: 'Машина на колесах' },
-  // ]);
-
   const [ads, setAds] = React.useState([]);
 
   React.useEffect(() => {
     const data = fetch('https://api.rentup.cy/json?func=mobile&action=getOrder');
     data.then(response => response.json().then(res => setAds(res)));
   }, []);
+
   return (
     <MainTemplate
       header={<Header userNavMenu={navMainData} token={token} />}
@@ -167,14 +177,20 @@ function MyAdsPage({ token }): JSX.Element {
                 <div className="info">
                   <Link href={`/myad/${ad.id}`}>
                     <a target="_blank">
-                      <H2 fontWeight="bold">{ad.name}</H2>
+                      <H2 fontWeight="bold">{ad.title}</H2>
+                      <H2 fontWeight="bold">
+                        &nbsp; &bull; {ad.bedrooms} bedrooms, {ad.square} m2
+                      </H2>
+                      <H2 fontWeight="bold">&nbsp; &bull; {ad.price_month} € </H2>
                     </a>
                   </Link>
-                  <H2 fontWeight="bold">3 bedrooms, 72 m2</H2>
-                  <H2 fontWeight="bold">1 000 000 € </H2>
                 </div>
                 <H4 className="info__adress" color="#00A9B0" margin="8px 0 0 0">
-                  Larnaca district, Oroklini Tourist Area
+                  <Link href={`/myad/${ad.id}`}>
+                    <a target="_blank">
+                      {ad.city}, {ad.street}
+                    </a>
+                  </Link>
                 </H4>
                 <div className="info__search">
                   <div>
@@ -211,7 +227,7 @@ function MyAdsPage({ token }): JSX.Element {
                         padding="8px 10px"
                         color="#00A9B0"
                       >
-                        <Delete />
+                        <Promote />
                         Promote
                       </ButtonPrimary>
                       <ButtonPrimary
@@ -220,7 +236,7 @@ function MyAdsPage({ token }): JSX.Element {
                         padding="8px 10px"
                         color="#00A9B0"
                       >
-                        <Delete />
+                        <Edit />
                         Edit
                       </ButtonPrimary>
                       <ButtonPrimary
@@ -229,7 +245,7 @@ function MyAdsPage({ token }): JSX.Element {
                         padding="8px 10px"
                         color="#00A9B0"
                       >
-                        <Delete />
+                        <OpenAd />
                         Open Ad
                       </ButtonPrimary>
                       <ButtonPrimary
@@ -238,7 +254,7 @@ function MyAdsPage({ token }): JSX.Element {
                         padding="8px 10px"
                         color="#00A9B0"
                       >
-                        <Delete />
+                        <ShareAds />
                         Share
                       </ButtonPrimary>
                     </>

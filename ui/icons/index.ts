@@ -25,3 +25,7 @@ export { RoundcheckOnBasic } from './roundCheck-on';
 export { RoundcheckOffBasic } from './roundCheck-off';
 export { Delete } from './delete';
 export { Sorting } from './sorting';
+export { OpenAd } from './open-ad';
+export { Edit } from './edit';
+export { Promote } from './promote';
+export { ShareAds } from './share-myads';
