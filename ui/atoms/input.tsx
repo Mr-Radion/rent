@@ -21,6 +21,7 @@ type InputProps = {
   name?: any;
   marginLeft?: string;
   paddingRight?: string;
+  margin?: string;
 };
 export const CustomInput: StyledComponent<any, any> = styled.input`
   ${({
@@ -34,6 +35,7 @@ export const CustomInput: StyledComponent<any, any> = styled.input`
     marginRight,
     marginTop,
     marginLeft,
+    margin,
   }: any) =>
     css`
        {
@@ -45,6 +47,7 @@ export const CustomInput: StyledComponent<any, any> = styled.input`
         border-radius: ${borderRadius ?? '4px'};
         margin-right: ${marginRight ?? '0'};
         margin-left: ${marginLeft};
+        margin: ${margin};
         padding: 0 0 0 10px;
         margin-top: ${marginTop};
       }
@@ -76,6 +79,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
   name,
   marginLeft,
+  margin,
 }) => {
   return (
     <CustomInput
@@ -83,6 +87,7 @@ const Input: React.FC<InputProps> = ({
       // onChange={event => setValue(event.target.value)}
       value={value}
       type={type}
+      margin={margin}
       placeholder={placeholder}
       paddingRight={paddingRight}
       width={width}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled, { StyledComponent } from 'styled-components';
 import classNames from 'classnames';
 import { fetchVerify, fetchSignIn, fetchSignUp } from '../ducks';
@@ -12,6 +12,8 @@ import {
   NumberField,
   OptionButton,
   ButtonBedrooms,
+  H3,
+  H6,
 } from '../../../ui';
 
 const CounterList: StyledComponent<any, any> = styled.ul`
@@ -31,7 +33,7 @@ const EditablePhone: StyledComponent<any, any> = styled.ul`
 export function AuthenticationForm({ closedModal }): JSX.Element {
   const router = useRouter();
   const dispatch = useDispatch();
-  // const { data, code } = useSelector(({ userAuth }: any) => userAuth);
+  const { data, code } = useSelector(({ userAuth }: any) => userAuth);
   const [phoneValid, setPhoneValid] = React.useState(false);
   const [codeValid, setCodeValid] = React.useState(false);
   const [form, setForm] = React.useState<any>({
@@ -57,14 +59,18 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
   React.useEffect(() => {
     if (codeValid) {
       dispatch(fetchSignIn({ phone: form.tel, code: form.code }));
+      if (data && data.msg !== 'User does not exist') closedModal(false);
+      router.push({
+        pathname: '/my-profile',
+      });
     }
-  }, [codeValid]);
+  }, [codeValid, data]);
 
   const onSelectProceed = ({ target }) => {
     console.log(target.name);
     if (target.name === 'proceed' && form.tel) {
       setPhoneValid(true);
-      dispatch(fetchVerify(form.tel));
+      // dispatch(fetchVerify(form.tel));
     } else if (target.name === 'changeNumber') {
       // setForm((form.tel = form.tel));
       setPhoneValid(false);
@@ -76,23 +82,23 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
 
   const onSelectRegistration = () => {
     // routing with a transition to the main page, but where there will already be a profile menu
-    dispatch(fetchSignUp({ phone: form.tel, type: formType, name: form.name, email: form.email }));
+    // dispatch(fetchSignUp({ phone: form.tel, type: formType, name: form.name, email: form.email }));
     closedModal(false);
     router.push({
-      pathname: '/',
+      pathname: '/my-profile',
     });
   };
 
   return (
     <>
-      {codeValid ? (
+      {codeValid && data === '33' ? (
         <div>
-          <h3>
+          <H3 fontWeight="bold">
             Hello!
             <br /> Looks like you don’t have an account yet.
-          </h3>
+          </H3>
           <br />
-          <h3>Please fill in the fields to complete the registration</h3>
+          <H3>Please fill in the fields to complete the registration</H3>
         </div>
       ) : (
         <Logo />
@@ -102,40 +108,54 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
       {phoneValid ? (
         <LoginStyled>
           <EditablePhone>
-            <span>Phone number</span>
+            <H6 margin="40px 0 0 0 ">Phone number</H6>
             <p>{form.tel}</p>
-            <ButtonPrimary name="changeNumber" onClick={e => onSelectProceed(e)}>
+            <ButtonPrimary
+              color="#00A9B0"
+              fontSize="11px"
+              fontWeight="normal"
+              name="changeNumber"
+              onClick={e => onSelectProceed(e)}
+            >
               Change number
             </ButtonPrimary>
           </EditablePhone>
-          {codeValid ? (
+          {codeValid && data === '33' ? (
             <div>
               <CounterList>
                 <OptionButton name="I`m owner" onClick={() => setFormType('I`m owner')}>
-                  <ButtonBedrooms
+                  <ButtonPrimary
                     fontSize="14px"
                     type="submit"
                     width="101px"
                     height="36px"
+                    fontWeight="normal"
+                    background="#F1F1F2"
+                    border="2px solid #A1D6E2"
+                    color="#4B4B4B"
                     className={classNames({
                       active: formType === 'I`m owner',
                     })}
                   >
                     I`m owner
-                  </ButtonBedrooms>
+                  </ButtonPrimary>
                 </OptionButton>
                 <OptionButton name="Agency" onClick={() => setFormType('Agency')}>
-                  <ButtonBedrooms
+                  <ButtonPrimary
                     fontSize="14px"
                     type="submit"
                     width="101px"
                     height="36px"
+                    fontWeight="normal"
+                    background="#F1F1F2"
+                    border="2px solid #A1D6E2"
+                    color="#4B4B4B"
                     className={classNames({
                       active: formType === 'Agency',
                     })}
                   >
                     Agency
-                  </ButtonBedrooms>
+                  </ButtonPrimary>
                 </OptionButton>
               </CounterList>
               <div>
@@ -173,31 +193,33 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
                 value={form.code === 0 ? undefined : form.code}
                 name="code"
                 onChange={handleInputCode}
-                placeholder="Code"
-                width="110px"
+                placeholder="Verification code"
+                width="218px"
                 height="36px"
-                border="2px solid #BCBABE"
+                margin="16px 0 4px 0"
+                border="2px solid #A1D6E2"
                 borderRadius="4px"
                 paddingRight="24px"
               />
-              <p> Sent code once again in 02:00</p>
+              <H6 textAlign="center" margin="2px 0 24px 0" color="#00A9B0">
+                Sent code once again in 02:00
+              </H6>
             </>
           )}
         </LoginStyled>
       ) : (
         <div>
-          <h3>Enter your phone number</h3>
+          {/* <h3>Enter your phone number</h3> */}
+          <H3 margin="42px 0 33px">Enter your phone number</H3>
           <Input
             // ref={refInput}
             value={form.tel === 0 ? undefined : form.tel}
             name="tel"
-            placeholder="tel"
+            placeholder="X XXX  XXX  XX  XX "
             type="tel"
             width="218px"
             height="36px"
-            marginTop="10px"
-            marginLeft="101px"
-            marginRight="101px"
+            margin="0 0 40px 0"
             onChange={handleInput}
           />
           {/* <input
@@ -213,14 +235,14 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
         </div>
       )}
       {/* continue and register buttons */}
-      {codeValid ? (
+      {codeValid && data === '33' ? (
         <ButtonPrimary
           width="218px"
           background="#00A9B0"
           color="#FAFAFA"
           height="36px"
           marginTop="15px"
-          marginLeft="101px"
+          // marginLeft="101px"
           onClick={onSelectRegistration}
         >
           Complete registration
@@ -234,7 +256,7 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
           radius="4px"
           height="36px"
           marginTop="15px"
-          marginLeft="101px"
+          // marginLeft="101px"
           onClick={e => onSelectProceed(e)}
         >
           Proceed

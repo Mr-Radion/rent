@@ -6,7 +6,7 @@
   "author": "Mr.Radion <mr.rodion_oa@mail.ru>",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev -p 4200",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./features ./pages ./ui --ext .js,.jsx,.tsx,.ts",

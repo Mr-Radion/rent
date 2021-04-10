@@ -108,7 +108,7 @@ const RightBlock = styled.div`
 const BreadCrumbs = styled.div`
   margin-top: 6px;
 `;
-export function AddingAdPage(): JSX.Element {
+export function AddingAdPage({ token }): JSX.Element {
   const [typeOfAccount, setAccount] = useState(null);
   const [typeOfRent, setTypeOfPeriodype] = useState(null);
   const [typeOfProp, setProp] = useState(null);
@@ -120,7 +120,7 @@ export function AddingAdPage(): JSX.Element {
   console.log(typeOfProp, typeOfRent, typeOfAccount);
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} />}
+      header={<Header userNavMenu={navMainData} token={token} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }
@@ -507,6 +507,10 @@ export function AddingAdPage(): JSX.Element {
       </ContainerAdaptive>
     </MainTemplate>
   );
+}
+
+export function getServerSideProps({ req }) {
+  return { props: { token: req.cookies.fcd || '' } };
 }
 
 export default AddingAdPage;

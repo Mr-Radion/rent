@@ -38,7 +38,7 @@ function JoinPage({ token }): JSX.Element {
 
   React.useEffect(() => {
     if (codeValid) {
-      dispatch(fetchSignIn({ tel: form.tel, code: form.code }));
+      dispatch(fetchSignIn({ phone: form.tel, code: form.code }));
     }
   }, [codeValid]);
 
@@ -125,7 +125,7 @@ function JoinPage({ token }): JSX.Element {
               radius="4px"
               height="36px"
               marginTop="15px"
-              marginLeft="101px"
+              // marginLeft="101px"
               onClick={e => onSelectProceed(e)}
             >
               Proceed
