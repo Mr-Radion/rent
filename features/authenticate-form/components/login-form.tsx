@@ -55,7 +55,7 @@ export const VerifyPhoneNumber = ({
       ) : (
         <>
           <h3>Enter your phone number</h3>
-          <NumberField
+          {/* <NumberField
             type="number"
             ref={refInput}
             value={tel === 0 ? undefined : tel}
@@ -69,12 +69,37 @@ export const VerifyPhoneNumber = ({
             onChange={handleInput}
             min="0"
             max="99999"
+          /> */}
+          <Input
+            ref={refInput}
+            value={tel === 0 ? undefined : tel}
+            name="tel"
+            placeholder="tel"
+            type="tel"
+            width="218px"
+            height="36px"
+            margin="10px 101px 0 101px"
+            onChange={handleInput}
           />
         </>
       )}
       {phoneValid && (
         <>
-          <Input
+          {/* <Input
+            value={code === 0 ? undefined : code}
+            name="code"
+            onChange={handleInputCode}
+            placeholder="Code"
+            width="110px"
+            height="36px"
+            border="2px solid #BCBABE"
+            borderRadius="4px"
+            paddingRight="24px"
+          /> */}
+          <NumberField
+            type="number"
+            min="0"
+            max="99999"
             value={code === 0 ? undefined : code}
             name="code"
             onChange={handleInputCode}

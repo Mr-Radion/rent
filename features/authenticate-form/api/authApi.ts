@@ -51,17 +51,19 @@ export const AuthApi = {
     });
   },
   signUp(postData: any): Promise<any> {
+    let formBody: any = [];
+    for (const property in postData) {
+      const encodedKey = encodeURIComponent(property);
+      const encodedValue = encodeURIComponent(postData[property]);
+      formBody.push(`${encodedKey}=${encodedValue}`);
+    }
+    formBody = formBody.join('&');
     const data = fetch('https://api.rentup.cy/json?func=web&action=create_user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
       },
-      body: JSON.stringify({
-        phone: postData.phone,
-        name: postData.name,
-        type: postData.type,
-        email: postData.email,
-      }),
+      body: formBody,
     });
     return data.then(response => response.json());
   },

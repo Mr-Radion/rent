@@ -397,7 +397,6 @@ const IndexPage: React.FC<any> = React.memo(({ token }) => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(fetchAdsRecommended());
-    // dispatch(authToggle(token));
   }, [token]);
 
   console.log(token);

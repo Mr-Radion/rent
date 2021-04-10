@@ -94,7 +94,7 @@ function FavoritesPage({ token }): JSX.Element {
   }
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} />}
+      header={<Header userNavMenu={navMainData} token={token} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }

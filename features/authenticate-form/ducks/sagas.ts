@@ -23,16 +23,17 @@ export function* fetchVerifyRequest({ payload }: any) {
 }
 
 export function* fetchSignInRequest({ payload }: FetchSignInActionInterface) {
-  // console.log(payload);
+  console.log(payload);
   const token = 'wdDAWdF*$Hfi94f';
   try {
     yield put(setUserLoadingStatus(LoadingStatus.LOADING));
-    const { data } = yield call(AuthApi.signIn, payload);
-    console.log(data, data.token);
-    yield token && call(AuthApi.logIn, token);
+    // const { data } = yield call(AuthApi.signIn, payload);
+    // console.log(data, data.token);
+    console.log(token);
+    if (token) yield call(AuthApi.logIn, token);
     // yield data.token && call(AuthApi.logIn, data.token);
     // const expirationDate = new Date(new (Date as any).getTime() + data.expiresIn * 1000);
-    yield put(setUserData(data));
+    // yield put(setUserData(data));
     // yield put(checkAuthTimeout(data.expiresIn));
   } catch (error) {
     yield put(setUserLoadingStatus(LoadingStatus.ERROR));

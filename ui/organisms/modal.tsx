@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled, { StyledComponent } from 'styled-components';
 
-import { ButtonPrimary, H3 } from '../atoms';
+import { ButtonPrimary, H2 } from '../atoms';
 import { UsePortal } from '../../lib/custom-hooks';
 
 const ModalStyled: StyledComponent<any, any> = styled.div`
@@ -16,6 +16,7 @@ const ModalStyled: StyledComponent<any, any> = styled.div`
     transition: 0.5s;
   }
   .modalWindow {
+    align-items: center;
     padding: 32px 24px 89px;
     box-shadow: 0px 4px 12px rgb(0 0 0 / 15%);
     border-radius: 8px;
@@ -68,6 +69,11 @@ const ModalStyled: StyledComponent<any, any> = styled.div`
 
 const CellPopUpHeading = styled.div`
   display: flex;
+  height: 60px;
+  border-bottom: 1px solid #a1d6e2;
+  // width: 100%;
+  width: 450px;
+  margin: 0 0 40px 0;
   justify-content: space-between;
 `;
 
@@ -88,7 +94,9 @@ export const Modal: React.FC<ModalProps> = ({ children, title, onClose, modalOpe
               <div className="modalWindow" ref={ref}>
                 {title && (
                   <CellPopUpHeading>
-                    <H3 marginTop="0">{title}</H3>
+                    <H2 fontSize="28px" fontWeight="bold">
+                      {title}
+                    </H2>
                     <ButtonPrimary
                       radius="100%"
                       width="24px"
