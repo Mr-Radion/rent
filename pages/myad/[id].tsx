@@ -1,9 +1,10 @@
 /* eslint-disable no-nested-ternary */
 // import ErrorPage from 'next/error';
-import { GetServerSideProps } from 'next';
+// import { GetServerSideProps } from 'next';
 // import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import shortid from 'shortid';
+import PageNotFound from '../404';
 
 import { Header, Footer, navMainData } from '../../features/common';
 import { filterPropertyItems, filterDistrictItems } from '../../features/filters/lib';
@@ -155,14 +156,14 @@ const CardsWrap = styled.div`
   }
 `;
 
-function MyAdPage({ ad }) {
+function MyAdPage({ token, ad }) {
   // let iconName = foo ? bar : foobar;
 
   // const router = useRouter();
-  console.log(ad);
-  // if (!router.isFallback && !ad?.AboutObject) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
+  console.log(token, ad, ad.description);
+  if (!token) {
+    return <PageNotFound />;
+  }
   return (
     <MainTemplate
       header={<Header userNavMenu={navMainData} />}
@@ -175,8 +176,10 @@ function MyAdPage({ ad }) {
           <BreadCrumbs>Breadcrumbs / Breadcrumbs / Breadcrumbs</BreadCrumbs>
           <AddWrap>
             <LeftBlock>
-              <H1>New apartment in strovolos</H1>
-              <h3>Lefkosia (Nicosia) district, Strovolos — Archangelos</h3>
+              <H1>{ad.title}</H1>
+              <h3>
+                {ad.city}, {ad.street}
+              </h3>
               <FlexWrap>
                 <ButtonPrimary background="#A1D6E2" padding="0 12px" color="#fff" radius="500px">
                   <RedHeart />
@@ -199,17 +202,7 @@ function MyAdPage({ ad }) {
 
               <DescBlock>
                 <H2>Description</H2>
-                <p>
-                  Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two
-                  floors with total of 6 apartments (3 apartments per floor) and features high
-                  standards and modern design.The construction is according to static calculations
-                  and antiseismic specifications. The apartment is set on the second floor and
-                  comprises of three bedrooms, ensuite in master bedroom, main bathroom,
-                  living-dining area, open plan kitchen and one covered veranda. Moreover, the
-                  apartment includes central heating provision, airconditioning provision, intercom
-                  system connected to the main entrance, solar system, water pressure system, two
-                  covered parking spaces. Price does not include VAT.
-                </p>
+                <p>{ad.description}</p>
               </DescBlock>
               <BottomLine />
               <InfoBlock>
@@ -364,40 +357,22 @@ function MyAdPage({ ad }) {
   );
 }
 
-// export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-//   //   const response = await fetch(`https://api.rentup.cy/json?func=web&action=getOrder/${params.id}`);
-//   console.log(params);
-//   const response = await fetch('https://api.rentup.cy/json?func=mobile&action=getOrder', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json;charset=utf-8',
-//     },
-//     // body: JSON.stringify({
-//     //   id: params.id,
-//     // }),
-//   });
-//   const ad = await response.json();
-//   return {
-//     props: {
-//       ad,
-//     },
-//   };
-// };
-
 export async function getServerSideProps({ req, res, params }) {
-  //   const response = await fetch(`https://api.rentup.cy/json?func=web&action=getOrder/${params.id}`);
-  console.log(params);
+  let formBody: any = [];
+  const encodedKey = encodeURIComponent('id');
+  const encodedValue = encodeURIComponent(params.id);
+  formBody.push(`${encodedKey}=${encodedValue}`);
+  formBody = formBody.join('&');
+
   const response = await fetch('https://api.rentup.cy/json?func=mobile&action=getOrder', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
     },
-    body: JSON.stringify({
-      id: params.id,
-    }),
+    body: formBody,
   });
   const ad = await response.json();
-  return { props: { token: req.cookies.fcd || '' } };
+  return { props: { token: req.cookies.fcd || '', ad: ad[0] } };
 }
 
 export default MyAdPage;

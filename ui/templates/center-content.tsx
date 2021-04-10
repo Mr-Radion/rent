@@ -26,8 +26,8 @@ export const CenterContent: StyledComponent<any, any> = styled.main`
 
 type CenterProps = {
   children: ReactNode;
-  align: any;
-  background: any;
+  align?: any;
+  background?: any;
 };
 
 export const CenterContentTemplate = ({
