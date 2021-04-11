@@ -56,7 +56,11 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
     } else setCodeValid(false);
   };
 
+  const refInput = React.useRef();
   React.useEffect(() => {
+    // refInput.current.focus();
+    // console.log(refInput);
+    // const autoFocus = true;
     if (codeValid) {
       dispatch(fetchSignIn({ phone: form.tel, code: form.code }));
       if (data && data.msg !== 'User does not exist') closedModal(false);
@@ -64,7 +68,7 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
         pathname: '/my-profile',
       });
     }
-  }, [codeValid, data]);
+  }, [codeValid, data, refInput]);
 
   const onSelectProceed = ({ target }) => {
     console.log(target.name);
@@ -213,6 +217,9 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
           <H3 margin="42px 0 33px">Enter your phone number</H3>
           <Input
             // ref={refInput}
+            ref={function (component) {
+              React.findDOMNode(component).focus();
+            }}
             value={form.tel === 0 ? undefined : form.tel}
             name="tel"
             placeholder="X XXX  XXX  XX  XX "
@@ -220,6 +227,7 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
             width="218px"
             height="36px"
             margin="0 0 40px 0"
+            autoFocus
             onChange={handleInput}
           />
           {/* <input

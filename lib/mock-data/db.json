@@ -939,7 +939,7 @@
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
-        "district": "Larnaca", 
+        "district": "larnaca", 
         "zone": "Oroklini Tourist Area"
       },
       "type_property": "apartment",

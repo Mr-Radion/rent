@@ -62,7 +62,7 @@ export const ToggleMenuSign = ({ userNavMenu, toggle, token }: any) => {
   // const router = useRouter();
   // let auth = status === 'LOADED' ? '' : tokenT;
   // console.log(tokenT);
-  console.log(token);
+  // console.log(token);
   // if (router.pathname === '/404') auth = token;
   return (
     <>

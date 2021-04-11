@@ -374,15 +374,17 @@ export const Filters = React.memo(() => {
 });
 
 export const SearchRun = () => {
-  const { filterLocationBy, filterTypePropertyBy } = useSelector(({ filters }: any) => filters);
+  const { filterLocationBy, filterTypePropertyBy, filterPriceBy } = useSelector(({ filters }: any) => filters);
   const locationRoute =
     filterLocationBy.length !== 0
       ? `?location=${String(filterLocationBy).toLowerCase()}`
       : 'all cities';
   const typePropertyRoute =
     filterTypePropertyBy.length !== 0
-      ? `&type-property=${String(filterTypePropertyBy).toLowerCase()}`
+      ? `&typeProperty=${String(filterTypePropertyBy).toLowerCase()}`
       : '';
+  // const minprice = filterPriceBy.from. 
+  // const maxprice = filterPriceBy.to
 
   return (
     <Link href="/search/[...query]" as={`/search${locationRoute}${typePropertyRoute}`}>
