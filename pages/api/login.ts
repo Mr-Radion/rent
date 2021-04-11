@@ -13,5 +13,6 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     }),
   );
   res.statusCode = 200;
-  res.json({ success: true });
+  // res.status(200).json({ results: filtered });
+  res.json({ success: req.body.token });
 };

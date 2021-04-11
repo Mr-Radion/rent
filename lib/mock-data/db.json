@@ -811,6 +811,7 @@
       },
       "type_property": "apartment",
       "bedrooms": 3,
+      "type_bedrooms": "Studio",
       "area": 56,
       "price": 1005450,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
@@ -829,7 +830,8 @@
         "zone": "Oroklini Tourist Area"
       },
       "type_property": "apartment",
-      "bedrooms": 3,
+      "bedrooms": 4,
+      "type_bedrooms": "Studio",
       "area": 72,
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
@@ -849,6 +851,7 @@
       },
       "type_property": "apartment",
       "bedrooms": 3,
+      "type_bedrooms": "Studio",
       "area": 72,
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
@@ -886,7 +889,7 @@
         "zone": "Oroklini Tourist Area"
       },
       "type_property": "apartment",
-      "bedrooms": 3,
+      "bedrooms": 5,
       "area": 72,
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
@@ -924,7 +927,7 @@
         "zone": "Oroklini Tourist Area"
       },
       "type_property": "apartment",
-      "bedrooms": 3,
+      "bedrooms": 4,
       "area": 72,
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
@@ -943,7 +946,7 @@
         "zone": "Oroklini Tourist Area"
       },
       "type_property": "apartment",
-      "bedrooms": 3,
+      "bedrooms": 2,
       "area": 72,
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
@@ -962,7 +965,7 @@
         "zone": "Oroklini Tourist Area"
       },
       "type_property": "apartment",
-      "bedrooms": 3,
+      "bedrooms": 7,
       "area": 27,
       "price": 100000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
@@ -1000,7 +1003,7 @@
         "zone": "Oroklini Tourist Area"
       },
       "type_property": "apartment",
-      "bedrooms": 3,
+      "bedrooms": 1,
       "area": 72,
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
@@ -1019,7 +1022,7 @@
         "zone": "Oroklini Tourist Area"
       },
       "type_property": "apartment",
-      "bedrooms": 3,
+      "bedrooms": 6,
       "area": 72,
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",

@@ -39,4 +39,5 @@ export interface UserState {
   data: null | UserDataToken | UserDataCode | UserDataRegistered | UserDataFailed;
   status: LoadingStatus;
   code: null | UserCodeVerify;
+  // token: null | string;
 }

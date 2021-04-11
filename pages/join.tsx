@@ -35,6 +35,7 @@ function JoinPage({ token }): JSX.Element {
     email: '',
   });
   const [formType, setFormType] = React.useState<any>('I`m owner');
+  const autoFocus = router.pathname === '/join';
 
   React.useEffect(() => {
     if (codeValid) {

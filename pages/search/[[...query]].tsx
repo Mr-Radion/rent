@@ -38,16 +38,12 @@ const SearchBox = styled.div``;
 
 function SearchResultPage({ token }) {
   const { query } = useRouter();
+  // const dispatch = useDispatch();
   // console.log(query.location);
   // const { data, error } = useSWR(() => query.location && `/api/search/${query.location}`, fetcher);
   // const data = fetch(`/api/search/${query.location}`).then(response => response.json()).then(res => res);
 
   const [ads, setAds] = React.useState(null);
-
-  // Регулярку вероятно ввести, чтобы без camelcase
-  // const typeProperty = 'type-property';
-
-  console.log(query.typeProperty);
 
   React.useEffect(() => {
     fetch('/api/search', {
@@ -61,6 +57,12 @@ function SearchResultPage({ token }) {
         maxprice: query?.maxprice,
         location: query?.location,
         typeProperty: query?.typeProperty,
+        room1: query?.room1,
+        room2: query?.room2,
+        room3: query?.room3,
+        room4: query?.room4,
+        room5: query?.room5,
+        bedroomsType: query?.bedroomsType,
       }),
     })
       .then(response => response.json())
@@ -68,15 +70,11 @@ function SearchResultPage({ token }) {
       .catch(error => console.log(error));
   }, [query]);
 
-  // Заглавить первую букву
-  // query.location[0].toUpperCase() + query.location.slice(1)
-
   // console.log(data, error);
   console.log(ads);
 
   const [searchQuery, setSearchQuery] = React.useState<any>('');
   const searchResult = useSelector(({ searchListResult }: any) => searchListResult);
-  // const dispatch = useDispatch();
   const [searchClick, setSearchClick] = React.useState<boolean>(false);
   // const filter = useSelector(({ filters }: any) => filters);
   // const locationRoute =
@@ -162,8 +160,7 @@ function SearchResultPage({ token }) {
   );
 }
 
-export function getServerSideProps({ req, res }) {
-  // console.log(res);
+export function getServerSideProps({ req }) {
   return { props: { token: req.cookies.fcd || '' } };
 }
 

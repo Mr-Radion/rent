@@ -7,8 +7,8 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 // import { END } from 'redux-saga';
 import shortid from 'shortid';
-// import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+// import Link from 'next/link';
 
 // import { wrapper } from '../features/common/store';
 import { Header, Footer, navMainData } from '../features/common';
@@ -374,7 +374,15 @@ export const Filters = React.memo(() => {
 });
 
 export const SearchRun = () => {
-  const { filterLocationBy, filterTypePropertyBy, filterPriceBy } = useSelector(({ filters }: any) => filters);
+  const router = useRouter();
+  const {
+    filterLocationBy,
+    filterTypePropertyBy,
+    filterPriceBy,
+    filterBedroomsCounterBy,
+    filterBedroomsTypeBy,
+  } = useSelector(({ filters }: any) => filters);
+
   const locationRoute =
     filterLocationBy.length !== 0
       ? `?location=${String(filterLocationBy).toLowerCase()}`
@@ -383,13 +391,65 @@ export const SearchRun = () => {
     filterTypePropertyBy.length !== 0
       ? `&typeProperty=${String(filterTypePropertyBy).toLowerCase()}`
       : '';
-  // const minprice = filterPriceBy.from. 
-  // const maxprice = filterPriceBy.to
+  const minprice = filterPriceBy.from ? `&minprice=${filterPriceBy.from}` : '';
+  const maxprice = filterPriceBy.to ? `&maxprice=${filterPriceBy.to}` : '';
+  const room1 = filterBedroomsCounterBy.includes(1) ? '&room1=1' : '';
+  const room2 =
+    filterBedroomsCounterBy.includes(2) ||
+    (filterBedroomsCounterBy.length > 1 &&
+      filterBedroomsCounterBy[filterBedroomsCounterBy.length - 1] > 2 &&
+      filterBedroomsCounterBy[0] < 2)
+      ? '&room2=2'
+      : '';
+  const room3 =
+    filterBedroomsCounterBy.includes(3) ||
+    (filterBedroomsCounterBy.length > 1 &&
+      filterBedroomsCounterBy[filterBedroomsCounterBy.length - 1] > 3 &&
+      filterBedroomsCounterBy[0] < 3)
+      ? '&room3=3'
+      : '';
+  const room4 =
+    filterBedroomsCounterBy.includes(4) ||
+    (filterBedroomsCounterBy.length > 1 &&
+      filterBedroomsCounterBy[filterBedroomsCounterBy.length - 1] > 3 &&
+      filterBedroomsCounterBy[0] < 3)
+      ? '&room4=4'
+      : '';
+  const room5 = filterBedroomsCounterBy.includes(5) ? '&room5=5' : '';
+  const bedroomsType =
+    filterBedroomsTypeBy.length !== 0
+      ? `&bedroomsType=${filterBedroomsTypeBy[0].toLowerCase()}`
+      : '';
+
+  const httpQuery = `${typePropertyRoute && locationRoute}${
+    typePropertyRoute && typePropertyRoute
+  }${minprice && minprice}${maxprice && maxprice}${room1 && room1}${room2 && room2}${
+    room3 && room3
+  }${room4 && room4}${room5 && room5}${bedroomsType && bedroomsType}`;
+
+  // console.log(filterBedroomsCounterBy, filterBedroomsTypeBy);
+
+  const onClickSearch = () => {
+    router.push({
+      pathname: '/search',
+      search: `${httpQuery}`,
+    });
+  };
 
   return (
-    <Link href="/search/[...query]" as={`/search${locationRoute}${typePropertyRoute}`}>
-      <a>Search</a>
-    </Link>
+    <ButtonPrimary
+      fontSize="18px"
+      // width="9.5rem"
+      minWidth="152px"
+      height="3.314rem"
+      color="#F1F1F2"
+      background="linear-gradient(70.2deg, #00A9B0 0%, #76DFC7 100%)"
+      onClick={onClickSearch}
+      fontWeight="bold"
+      radius="4px"
+    >
+      Search
+    </ButtonPrimary>
   );
 };
 
@@ -400,11 +460,6 @@ const IndexPage: React.FC<any> = React.memo(({ token }) => {
   React.useEffect(() => {
     dispatch(fetchAdsRecommended());
   }, [token]);
-
-  console.log(token);
-
-  // console.log(cardData.recommendedCardData);
-  // const router = useRouter();
 
   return (
     <ContainerSeo
