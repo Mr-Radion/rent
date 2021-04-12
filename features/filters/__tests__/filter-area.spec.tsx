@@ -10,7 +10,7 @@ describe('FilterArea component', () => {
 
     render(<FilterArea onClickFilterArea={onSelectClickFilter} />);
     // screen.debug();
-    (expect(screen.getByText(/Area/i)) as any).toBeInTheDocument();
+    (expect(screen.getByText(/Square/i)) as any).toBeInTheDocument();
   });
 
   // eslint-disable-next-line jest/no-commented-out-tests

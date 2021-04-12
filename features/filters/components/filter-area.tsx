@@ -64,7 +64,7 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
               form.to &&
               `${numberIntervalsFormatted(form.from)} - ${numberIntervalsFormatted(
                 form.to,
-              )} м²`) || <span>Area</span>}
+              )} м²`) || <span>Square</span>}
         </button>
       </div>
       {visiblePopup && (
@@ -110,3 +110,5 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
     </SelectFilterType>
   );
 });
+
+// Убрать запятые при вводе в инпут (точки можно оставить)

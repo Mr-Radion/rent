@@ -4,51 +4,91 @@ import { search_result } from '../../lib/mock-data/db.json';
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const { body, method } = req;
 
-  // console.log(body);
-  const adName = p => (body?.q ? p?.ad_name === body?.q.trim() : true);
+  const adName = p => (body?.q ? p?.ad_name.trim() === body?.q.trim() : true);
   const locationDistrict = p =>
     body?.location && body?.location !== 'all cities'
-      ? p?.location.district === body?.location.trim()
+      ? p?.location.district === body?.location
       : true;
-  const typeProperty = p =>
-    body?.typeProperty ? p?.type_property === body?.typeProperty.trim() : true;
-  const price = p =>
-    body?.minprice || body?.maxprice
-      ? p?.price >= body?.minprice.trim() && p?.price <= body?.maxprice.trim()
+  const typeProperty = p => (body?.typeProperty ? p?.type_property === body?.typeProperty : true);
+  const price = p => {
+    if (body?.minprice && !body?.maxprice) {
+      console.log('Первое');
+      return p?.price >= body?.minprice;
+    }
+    if (body?.maxprice && !body?.minprice) {
+      console.log('Второе');
+      return p?.price <= body?.maxprice;
+    }
+    if (body?.maxprice && body?.maxprice) {
+      console.log('Третье');
+      return p?.price >= body?.minprice && p?.price <= body?.maxprice;
+    }
+    return true;
+  };
+  // const price = p => {
+  //   if (body?.minprice && !body?.maxprice) {
+  //     // console.log(!body?.minprice);
+  //     return p?.price >= body?.minprice;
+  //   }
+  //   return true;
+  // };
+  const square = p =>
+    body?.minsquare || body?.maxsquare
+      ? p?.square >= body?.minsquare && p?.square <= body?.maxsquare
       : true;
-  const room1 = p => (body?.room1 ? p?.bedrooms === Number(body?.room1) : true);
-  const room2 = p => (body?.room2 ? p?.bedrooms === Number(body?.room2) : true);
-  const room3 = p => (body?.room3 ? p?.bedrooms === Number(body?.room3) : true);
-  const room4 = p => (body?.room4 ? p?.bedrooms === Number(body?.room4) : true);
-  const room5 = p => (body?.room5 ? p?.bedrooms >= Number(body?.room5) : true);
+  const filterRoom1 = search_result.filter(p =>
+    body?.room1 ? p?.room1 === Number(body?.room1) : false,
+  );
+  const filterRoom2 = search_result.filter(p =>
+    body?.room2 ? p?.room2 === Number(body?.room2) : false,
+  );
+  const filterRoom3 = search_result.filter(p =>
+    body?.room3 ? p?.room3 === Number(body?.room3) : false,
+  );
+  const filterRoom4 = search_result.filter(p =>
+    body?.room4 ? p?.room4 === Number(body?.room4) : false,
+  );
+  const filterRoom5 = search_result.filter(p => (body?.room5 ? p?.bedrooms >= 5 : false));
+
+  const bedroomsSummation = [
+    ...filterRoom1,
+    ...filterRoom2,
+    ...filterRoom3,
+    ...filterRoom4,
+    ...filterRoom5,
+  ];
+
+  function unique(arr) {
+    return Array.from(new Set(arr));
+  }
+  const bedroomsFiltered = unique(bedroomsSummation);
+
+  // console.log(filterRoom5);
   const bedroomsType = p =>
     body?.bedroomsType
       ? p?.type_bedrooms >= body?.bedroomsType[0].toUpperCase() + body?.bedroomsType.slice(1)
       : true;
 
-  const filtered = search_result.filter(p => {
-    // console.log(room3(p));
+  const filtered = bedroomsFiltered.filter(p => {
+    // console.log(price(p));
     return (
       adName(p) &&
       locationDistrict(p) &&
       price(p) &&
       typeProperty(p) &&
       bedroomsType(p) &&
-      room1(p) &&
-      room2(p) &&
-      room3(p) &&
-      room4(p) &&
-      room5(p)
+      square(p)
     );
   });
 
   // Todo
-  // - сделать возможность выбирать несколько вариантов комнат включительно, а не сужая
+  // Фильтр по площадям протестить после исправления бизнес логики на фронте
+  // Если указано значение только от или только до учесть для прайса и площадей.
 
   switch (method) {
     case 'POST':
       if (filtered.length > 0) {
-        res.status(200).json({ results: filtered });
+        res.status(200).json({ results: bedroomsFiltered });
       } else {
         res.status(404).json({ message: 'Search results: not found.' });
       }

@@ -55,6 +55,8 @@ function SearchResultPage({ token }) {
         q: query?.q,
         minprice: query?.minprice,
         maxprice: query?.maxprice,
+        minsquare: query?.minsquare,
+        maxsquare: query?.maxsquare,
         location: query?.location,
         typeProperty: query?.typeProperty,
         room1: query?.room1,
