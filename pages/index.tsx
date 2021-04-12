@@ -7,8 +7,8 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 // import { END } from 'redux-saga';
 import shortid from 'shortid';
-// import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+// import Link from 'next/link';
 
 // import { wrapper } from '../features/common/store';
 import { Header, Footer, navMainData } from '../features/common';
@@ -374,35 +374,103 @@ export const Filters = React.memo(() => {
 });
 
 export const SearchRun = () => {
-  const { filterLocationBy, filterTypePropertyBy } = useSelector(({ filters }: any) => filters);
+  const router = useRouter();
+  const {
+    filterLocationBy,
+    filterTypePropertyBy,
+    filterPriceBy,
+    filterBedroomsCounterBy,
+    filterBedroomsTypeBy,
+    filterSquareBy,
+  } = useSelector(({ filters }: any) => filters);
+
   const locationRoute =
     filterLocationBy.length !== 0
       ? `?location=${String(filterLocationBy).toLowerCase()}`
       : 'all cities';
   const typePropertyRoute =
     filterTypePropertyBy.length !== 0
-      ? `&type-property=${String(filterTypePropertyBy).toLowerCase()}`
+      ? `&typeProperty=${String(filterTypePropertyBy).toLowerCase()}`
+      : '';
+  const minprice = filterPriceBy.from ? `&minprice=${filterPriceBy.from}` : '';
+  const maxprice = filterPriceBy.to ? `&maxprice=${filterPriceBy.to}` : '';
+  const minsquare = filterSquareBy.from ? `&minsquare=${filterSquareBy.from}` : '';
+  const maxsquare = filterSquareBy.to ? `&maxsquare=${filterSquareBy.to}` : '';
+  const room1 = filterBedroomsCounterBy.includes(1) ? '&room1=1' : '';
+  const room2 =
+    filterBedroomsCounterBy.includes(2) ||
+    (filterBedroomsCounterBy.length > 1 &&
+      filterBedroomsCounterBy[filterBedroomsCounterBy.length - 1] > 2 &&
+      filterBedroomsCounterBy[0] < 2)
+      ? '&room2=1'
+      : '';
+  const room3 =
+    filterBedroomsCounterBy.includes(3) ||
+    (filterBedroomsCounterBy.length > 1 &&
+      filterBedroomsCounterBy[filterBedroomsCounterBy.length - 1] > 3 &&
+      filterBedroomsCounterBy[0] < 3)
+      ? '&room3=1'
+      : '';
+  const room4 =
+    filterBedroomsCounterBy.includes(4) ||
+    (filterBedroomsCounterBy.length > 1 &&
+      filterBedroomsCounterBy[filterBedroomsCounterBy.length - 1] > 3 &&
+      filterBedroomsCounterBy[0] < 3)
+      ? '&room4=1'
+      : '';
+  const room5 = filterBedroomsCounterBy.includes(5) ? '&room5=1' : '';
+  const bedroomsType =
+    filterBedroomsTypeBy.length !== 0
+      ? `&bedroomsType=${filterBedroomsTypeBy[0].toLowerCase()}`
       : '';
 
+  const httpQuery = `${typePropertyRoute && locationRoute}${
+    typePropertyRoute && typePropertyRoute
+  }${minprice && minprice}${maxprice && maxprice}${room1 && room1}${room2 && room2}${
+    room3 && room3
+  }${room4 && room4}${room5 && room5}${bedroomsType && bedroomsType}${minsquare && minsquare}${
+    maxsquare && maxsquare
+  }`;
+
+  const onClickSearch = () => {
+    router.push({
+      pathname: '/search',
+      search: `${httpQuery}`,
+    });
+  };
+
   return (
-    <Link href="/search/[...query]" as={`/search${locationRoute}${typePropertyRoute}`}>
-      <a>Search</a>
-    </Link>
+    <ButtonPrimary
+      fontSize="18px"
+      // width="9.5rem"
+      minWidth="152px"
+      height="3.314rem"
+      color="#F1F1F2"
+      background="linear-gradient(70.2deg, #00A9B0 0%, #76DFC7 100%)"
+      onClick={onClickSearch}
+      fontWeight="bold"
+      radius="4px"
+    >
+      Search
+    </ButtonPrimary>
   );
 };
 
 const IndexPage: React.FC<any> = React.memo(({ token }) => {
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
   // const { filterTypePropertyBy, filterLocationBy } = useSelector(({ filters }: any) => filters);
   const { recommendedCardData } = useSelector(({ recommendedCard }: any) => recommendedCard);
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(fetchAdsRecommended());
   }, [token]);
-
-  console.log(token);
-
-  // console.log(cardData.recommendedCardData);
-  // const router = useRouter();
 
   return (
     <ContainerSeo
@@ -411,7 +479,7 @@ const IndexPage: React.FC<any> = React.memo(({ token }) => {
       homePage
     >
       <MainTemplate
-        header={<Header userNavMenu={navMainData} token={token} />}
+        header={<Header userNavMenu={navMainData} token={token || tokenT} />}
         footer={
           <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
         }

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import styled, { StyledComponent } from 'styled-components';
 import classNames from 'classnames';
-import { fetchVerify, fetchSignIn, fetchSignUp } from '../ducks';
+import { fetchSignIn } from '../ducks';
 import {
   Modal,
   Logo,
@@ -11,7 +11,7 @@ import {
   ButtonPrimary,
   NumberField,
   OptionButton,
-  ButtonBedrooms,
+  // ButtonBedrooms,
   H3,
   H6,
 } from '../../../ui';
@@ -33,7 +33,7 @@ const EditablePhone: StyledComponent<any, any> = styled.ul`
 export function AuthenticationForm({ closedModal }): JSX.Element {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { data, code } = useSelector(({ userAuth }: any) => userAuth);
+  const { userData } = useSelector(({ userAuth }: any) => userAuth);
   const [phoneValid, setPhoneValid] = React.useState(false);
   const [codeValid, setCodeValid] = React.useState(false);
   const [form, setForm] = React.useState<any>({
@@ -56,15 +56,19 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
     } else setCodeValid(false);
   };
 
+  const refInput = React.useRef();
   React.useEffect(() => {
+    // refInput.current.focus();
+    // console.log(refInput);
+    // const autoFocus = true;
     if (codeValid) {
       dispatch(fetchSignIn({ phone: form.tel, code: form.code }));
-      if (data && data.msg !== 'User does not exist') closedModal(false);
+      if (userData && userData.msg !== 'User does not exist') closedModal(false);
       router.push({
         pathname: '/my-profile',
       });
     }
-  }, [codeValid, data]);
+  }, [codeValid, userData, refInput]);
 
   const onSelectProceed = ({ target }) => {
     console.log(target.name);
@@ -91,7 +95,7 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
 
   return (
     <>
-      {codeValid && data === '33' ? (
+      {codeValid && userData === '33' ? (
         <div>
           <H3 fontWeight="bold">
             Hello!
@@ -120,7 +124,7 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
               Change number
             </ButtonPrimary>
           </EditablePhone>
-          {codeValid && data === '33' ? (
+          {codeValid && userData === '33' ? (
             <div>
               <CounterList>
                 <OptionButton name="I`m owner" onClick={() => setFormType('I`m owner')}>
@@ -213,6 +217,9 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
           <H3 margin="42px 0 33px">Enter your phone number</H3>
           <Input
             // ref={refInput}
+            // ref={function (component) {
+            //   React.findDOMNode(component).focus();
+            // }}
             value={form.tel === 0 ? undefined : form.tel}
             name="tel"
             placeholder="X XXX  XXX  XX  XX "
@@ -220,6 +227,7 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
             width="218px"
             height="36px"
             margin="0 0 40px 0"
+            autoFocus
             onChange={handleInput}
           />
           {/* <input
@@ -235,7 +243,7 @@ export function AuthenticationForm({ closedModal }): JSX.Element {
         </div>
       )}
       {/* continue and register buttons */}
-      {codeValid && data === '33' ? (
+      {codeValid && userData === '33' ? (
         <ButtonPrimary
           width="218px"
           background="#00A9B0"

@@ -36,7 +36,7 @@ export interface UserCodeVerify {
 }
 
 export interface UserState {
-  data: null | UserDataToken | UserDataCode | UserDataRegistered | UserDataFailed;
+  userData: null | UserDataToken | UserDataCode | UserDataRegistered | UserDataFailed;
   status: LoadingStatus;
   code: null | UserCodeVerify;
 }
