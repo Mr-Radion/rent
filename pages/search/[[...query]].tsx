@@ -37,6 +37,14 @@ const SearchBox = styled.div``;
 // };
 
 function SearchResultPage({ token }) {
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
   const { query } = useRouter();
   // const dispatch = useDispatch();
   // console.log(query.location);
@@ -44,6 +52,7 @@ function SearchResultPage({ token }) {
   // const data = fetch(`/api/search/${query.location}`).then(response => response.json()).then(res => res);
 
   const [ads, setAds] = React.useState(null);
+  console.log(query?.minsquare, query?.maxsquare);
 
   React.useEffect(() => {
     fetch('/api/search', {
@@ -129,7 +138,7 @@ function SearchResultPage({ token }) {
   return (
     <Container title="Search result" descriptione="Real estate ads in Cyprus">
       <MainTemplate
-        header={<Header userNavMenu={navMainData} token={token} />}
+        header={<Header userNavMenu={navMainData} token={token || tokenT} />}
         footer={
           <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
         }

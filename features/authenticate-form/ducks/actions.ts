@@ -7,7 +7,6 @@ import {
   FetchSignInActionInterface,
   FetchSignUpActionInterface,
   FetchUserTokenDataActionInterface,
-  // AuthToggleActionInterface,
   SetUserDataActionInterface,
   SetUserLoadingStatusActionInterface,
   SignOutActionInterface,
@@ -57,7 +56,7 @@ export const setUserLoadingStatus = (
 });
 
 // supplies the requested data to the reducer
-export const setUserData = (payload: UserState['data']): SetUserDataActionInterface => ({
+export const setUserData = (payload: UserState['userData']): SetUserDataActionInterface => ({
   type: UserActionsType.SET_USER_DATA,
   payload,
 });
@@ -66,7 +65,6 @@ export type UserActions =
   | SetUserLoadingStatusActionInterface
   | SetUserDataActionInterface
   | SetVerifyInterface
-  // | AuthToggleActionInterface
   | FetchUserTokenDataActionInterface
   | FetchVerifyInterface
   | SignOutActionInterface;

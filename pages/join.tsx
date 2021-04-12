@@ -2,29 +2,33 @@ import React from 'react';
 // import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
+import useSWR from 'swr';
 // import { GetServerSideProps } from 'next';
 // import { END } from 'redux-saga';
 // import { wrapper } from '../features/common/store';
-// import PageNotFound from './404';
+import PageNotFound from './404';
 import { ButtonPrimary, MainTemplate, CenterContentTemplate } from '../ui';
 import { LoginForm, RegisterForm } from '../features/authenticate-form';
 import { fetchSignUp, fetchVerify, fetchSignIn } from '../features/authenticate-form/ducks';
 import { Header, Footer, navMainData } from '../features/common';
 import { filterPropertyItems, filterDistrictItems } from '../features/filters/lib';
 
-function JoinPage({ token }): JSX.Element {
-  // if (token) {
-  //   return <PageNotFound />;
-  // }
+const fetcher = async url => {
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (res.status !== 200) {
+    throw new Error(data.message);
+  }
+  return data;
+};
+
+function JoinPage(): JSX.Element {
+  const { data } = useSWR(() => '/api/auth', fetcher);
   const dispatch = useDispatch();
   const router = useRouter();
 
-  // React.useEffect(() => {
-  //   dispatch(authToggle(token));
-  // }, [token]);
-  // console.log(token);
-
-  const { data } = useSelector(({ userAuth }: any) => userAuth);
+  const { userData } = useSelector(({ userAuth }: any) => userAuth);
   const [phoneValid, setPhoneValid] = React.useState(false);
   // const [codeSent, setCodeSent] = React.useState(false);
   const [codeValid, setCodeValid] = React.useState(false);
@@ -35,7 +39,7 @@ function JoinPage({ token }): JSX.Element {
     email: '',
   });
   const [formType, setFormType] = React.useState<any>('I`m owner');
-  const autoFocus = router.pathname === '/join';
+  // const autoFocus = router.pathname === '/join';
 
   React.useEffect(() => {
     if (codeValid) {
@@ -77,15 +81,19 @@ function JoinPage({ token }): JSX.Element {
     });
   };
 
+  if (data && data.success) {
+    return <PageNotFound />;
+  }
+
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} token={token} />}
+      header={<Header userNavMenu={navMainData} token={data && data.success} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }
     >
       <CenterContentTemplate>
-        {data && data.msg === 'User does not exist' ? (
+        {userData && userData.msg === 'User does not exist' ? (
           <>
             <RegisterForm
               type={formType}
@@ -109,7 +117,7 @@ function JoinPage({ token }): JSX.Element {
         ) : (
           <>
             <LoginForm
-              data={data}
+              data={userData}
               tel={form.tel}
               code={form.code}
               handleInput={handleInput}

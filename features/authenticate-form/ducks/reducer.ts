@@ -4,10 +4,9 @@ import { UserState } from './contracts/state';
 import { LoadingStatus } from '../../common/store/types';
 
 const initialUserState: UserState = {
-  data: null,
+  userData: null,
   status: LoadingStatus.NEVER,
   code: null,
-  // token: null,
 };
 
 export const userReducer = (state = initialUserState, action: UserActions): any => {
@@ -15,30 +14,27 @@ export const userReducer = (state = initialUserState, action: UserActions): any 
     case UserActionsType.SET_LOADING_STATE:
       return {
         ...state,
-        data: null,
+        userData: null,
         status: action.payload,
         code: null,
-        // token: null,
       };
     case UserActionsType.SET_VERIFY:
       return {
         ...state,
-        data: null,
+        userData: null,
         status: LoadingStatus.LOADING,
         code: action.payload,
-        // token: null,
       };
     case UserActionsType.SET_USER_DATA:
       return {
         ...state,
-        data: action.payload,
+        userData: action.payload,
         status: LoadingStatus.SUCCESS,
-        // token: null,
       };
     case UserActionsType.SIGN_OUT:
       return {
         ...state,
-        data: null,
+        userData: null,
         status: LoadingStatus.LOADED,
       };
     default:

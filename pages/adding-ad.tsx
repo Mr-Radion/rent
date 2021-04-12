@@ -109,6 +109,14 @@ const BreadCrumbs = styled.div`
   margin-top: 6px;
 `;
 export function AddingAdPage({ token }): JSX.Element {
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
   const [typeOfAccount, setAccount] = useState(null);
   const [typeOfRent, setTypeOfPeriodype] = useState(null);
   const [typeOfProp, setProp] = useState(null);
@@ -120,7 +128,7 @@ export function AddingAdPage({ token }): JSX.Element {
   console.log(typeOfProp, typeOfRent, typeOfAccount);
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} token={token} />}
+      header={<Header userNavMenu={navMainData} token={token || tokenT} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }

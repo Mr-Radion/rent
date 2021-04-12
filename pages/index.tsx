@@ -457,6 +457,14 @@ export const SearchRun = () => {
 };
 
 const IndexPage: React.FC<any> = React.memo(({ token }) => {
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
   // const { filterTypePropertyBy, filterLocationBy } = useSelector(({ filters }: any) => filters);
   const { recommendedCardData } = useSelector(({ recommendedCard }: any) => recommendedCard);
   const dispatch = useDispatch();
@@ -471,7 +479,7 @@ const IndexPage: React.FC<any> = React.memo(({ token }) => {
       homePage
     >
       <MainTemplate
-        header={<Header userNavMenu={navMainData} token={token} />}
+        header={<Header userNavMenu={navMainData} token={token || tokenT} />}
         footer={
           <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
         }

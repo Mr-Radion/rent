@@ -14,5 +14,5 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
   );
   res.statusCode = 200;
   // res.status(200).json({ results: filtered });
-  res.json({ success: req.body.token });
+  res.json({ success: req.cookies.fcd });
 };
