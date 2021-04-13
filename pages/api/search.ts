@@ -4,7 +4,8 @@ import { search_result } from '../../lib/mock-data/db.json';
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const { body, method } = req;
 
-  const adName = p => (body?.q ? p?.ad_name.trim() === body?.q.trim() : true);
+  const adName = p =>
+    body?.q ? p?.ad_name.trim().toLowerCase() === body?.q.trim().toLowerCase() : true;
   const locationDistrict = p =>
     body?.location && body?.location !== 'all cities'
       ? p?.location.district === body?.location

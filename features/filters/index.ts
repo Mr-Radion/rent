@@ -4,6 +4,7 @@ export {
   FilterBedrooms,
   FilterArea,
   FilterLocation,
+  Filters,
 } from './components';
 export {
   setFilterTypePropertyBy,

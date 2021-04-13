@@ -1,5 +1,7 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
+import { useRouter } from 'next/router';
+
 import { SelectFilterType, NumberField } from '../../../ui';
 import { useOnClickOutside } from '../../../lib/custom-hooks';
 import { priceNumberRound } from '../../../lib/formatted';
@@ -31,6 +33,7 @@ type FilterPriceProps = {
 
 export const FilterPrice: React.FC<FilterPriceProps> = React.memo(({ onClickFilterPrice }) => {
   const filterRef = React.useRef();
+  const router = useRouter();
   const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
   const [getFrom, setFrom] = React.useState<number>();
   const [getTo, setTo] = React.useState<number>();
@@ -73,7 +76,11 @@ export const FilterPrice: React.FC<FilterPriceProps> = React.memo(({ onClickFilt
   }, [getTo, getFrom]);
 
   return (
-    <SelectFilterType ref={filterRef} visiblePopup={visiblePopup} arrowDefault>
+    <SelectFilterType
+      ref={filterRef}
+      visiblePopup={visiblePopup}
+      arrowDefault={router.pathname === '/' ? 'arrowDefault' : ''}
+    >
       <div className="label">
         <button
           onClick={() => setVisiblePopup(!visiblePopup)}

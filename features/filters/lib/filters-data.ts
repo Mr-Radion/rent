@@ -191,4 +191,4 @@ export const filterDistrictItems = [
   },
 ];
 
-export const filterNavItems = [{ point: 'Buy' }, { point: 'Rent' }];
+export const filterNavItems = [{ point: 'Rent' }, { point: 'Buy' }];

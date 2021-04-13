@@ -1,1 +1,1 @@
-export { SearchCart, SearchBar } from './components';
+export { SearchRun } from './components';

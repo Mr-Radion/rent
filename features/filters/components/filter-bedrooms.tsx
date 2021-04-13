@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
 import classNames from 'classnames';
+import { useRouter } from 'next/router';
+
 import { useOnClickOutside } from '../../../lib/custom-hooks';
 import { sortedAscending, numberDivisionFormatted } from '../../../lib/formatted';
 import {
@@ -36,6 +38,7 @@ export const FilterBedrooms: React.FC<FilterBedroomsProps> = React.memo(
     activeLabelType,
   }) => {
     const filterRef = React.useRef();
+    const router = useRouter();
     const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
     useOnClickOutside(filterRef, () => setVisiblePopup(false));
 
@@ -60,7 +63,11 @@ export const FilterBedrooms: React.FC<FilterBedroomsProps> = React.memo(
     };
 
     return (
-      <SelectFilterType ref={filterRef} visiblePopup={visiblePopup} arrowDefault>
+      <SelectFilterType
+        ref={filterRef}
+        visiblePopup={visiblePopup}
+        arrowDefault={router.pathname === '/' ? 'arrowDefault' : ''}
+      >
         <div className="label">
           <button
             onClick={() => setVisiblePopup(!visiblePopup)}
@@ -78,10 +85,10 @@ export const FilterBedrooms: React.FC<FilterBedroomsProps> = React.memo(
                 items.counter.map((num: any, index: number) => (
                   <OptionButton onClick={() => onSelectItemCounter(num)} key={`${num}`}>
                     <ButtonBedrooms
-                      fontSize="16px"
+                      fontSize={router.pathname === '/' ? '16px' : ''}
                       type="submit"
-                      width="36px"
-                      height="36px"
+                      width={router.pathname === '/' ? '36px' : ''}
+                      height={router.pathname === '/' ? '36px' : ''}
                       className={classNames({
                         active: activeLabelCounter.includes(num),
                       })}

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
+import { useRouter } from 'next/router';
+
 import { SelectFilterType, NumberField } from '../../../ui';
 import { useOnClickOutside } from '../../../lib/custom-hooks';
 import { numberIntervalsFormatted } from '../../../lib/formatted';
@@ -32,6 +34,7 @@ type FilterAreaProps = {
 
 export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilterArea }) => {
   const filterRef = React.useRef();
+  const router = useRouter();
   const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
   const [form, setForm] = React.useState<FilterAreaState>({
     from: 0,
@@ -51,7 +54,11 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
   }, [form.from, form.to]);
 
   return (
-    <SelectFilterType ref={filterRef} visiblePopup={visiblePopup} arrowDefault>
+    <SelectFilterType
+      ref={filterRef}
+      visiblePopup={visiblePopup}
+      arrowDefault={router.pathname === '/' ? 'arrowDefault' : ''}
+    >
       <div className="label">
         <button
           onClick={() => setVisiblePopup(!visiblePopup)}

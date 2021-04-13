@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
 // import classNames from 'classnames';
+import { useRouter } from 'next/router';
+
 import { sortedAscending, commasAndSpaces } from '../../../lib/formatted';
 import { useOnClickOutside } from '../../../lib/custom-hooks';
 import {
@@ -25,6 +27,7 @@ type FilterLocationProps = {
 export const FilterLocation: React.FC<FilterLocationProps> = React.memo(
   ({ onClickFilterLocation, items, activeAddress }) => {
     const filterRef = React.useRef();
+    const router = useRouter();
     const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
     useOnClickOutside(filterRef, () => setVisiblePopup(false));
 
@@ -57,10 +60,10 @@ export const FilterLocation: React.FC<FilterLocationProps> = React.memo(
         // display="flex"
         // width="calc(100% - 1000px)"
         // width="40%"
+        arrowDefault={router.pathname === '/' ? 'arrowDefault' : ''}
         flexBasis="40%"
         tablet="100%"
         minWidth="250px"
-        arrowDefault
       >
         <div className="label label__location">
           <button
