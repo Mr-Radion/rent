@@ -6,7 +6,7 @@ const initialState = {
     from: 0,
     to: 0,
   },
-  filterAreaBy: {
+  filterSquareBy: {
     from: 0,
     to: 0,
   },

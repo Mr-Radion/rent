@@ -116,21 +116,22 @@ const RightBlock = styled.div`
 const BorderLine = styled.div`
   border: 1px solid #bcbabe;
 `;
+
 export function MyProfilePage({ token }): JSX.Element {
-  // const router = useRouter();
-  // if (!auth) {
-  //   React.useEffect(() => {
-  //     router.push({ pathname: '/404' });
-  //   }, [auth]);
-  //   return <PageNotFound />;
-  // }
-  // взять и обновлять токен из стора
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
   if (!token) {
     return <PageNotFound />;
   }
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} token={token} />}
+      header={<Header userNavMenu={navMainData} token={token || tokenT} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }

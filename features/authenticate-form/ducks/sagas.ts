@@ -15,7 +15,7 @@ export function* fetchVerifyRequest({ payload }: any) {
   try {
     yield put(setUserLoadingStatus(LoadingStatus.LOADING));
     const { data } = yield call(AuthApi.verify, payload);
-    console.log(data);
+    // console.log(data);
     yield put(setVerify(data.msg));
   } catch (error) {
     yield put(setUserLoadingStatus(LoadingStatus.ERROR));
@@ -33,7 +33,17 @@ export function* fetchSignInRequest({ payload }: FetchSignInActionInterface) {
     if (token) yield call(AuthApi.logIn, token);
     // yield data.token && call(AuthApi.logIn, data.token);
     // const expirationDate = new Date(new (Date as any).getTime() + data.expiresIn * 1000);
-    // yield put(setUserData(data));
+    yield put(
+      setUserData({
+        id: 'string',
+        time: 'string',
+        name: 'string',
+        type: 'string',
+        email: 'string',
+        phone: 'string',
+        token,
+      }),
+    );
     // yield put(checkAuthTimeout(data.expiresIn));
   } catch (error) {
     yield put(setUserLoadingStatus(LoadingStatus.ERROR));

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MapMarker } from '../../../ui';
+import { MapMarker, PhotoBox } from '../../../ui';
 import { RecommendedAdsState } from '../ducks';
 
 const CartBlock = styled.div`
@@ -48,22 +48,22 @@ const CartAdress = styled.div`
   }
 `;
 
-const PhotoBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 184px;
-  background-color: #c4c4c4;
-  position: relative;
-  img {
-    position: absolute;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
-    object-fit: cover;
-  }
-`;
+// const PhotoBox = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 184px;
+//   background-color: #c4c4c4;
+//   position: relative;
+//   img {
+//     position: absolute;
+//     min-width: 100%;
+//     max-width: 100%;
+//     min-height: 100%;
+//     max-height: 100%;
+//     object-fit: cover;
+//   }
+// `;
 
 const PriceBlock = styled.div`
   font-style: normal;
@@ -89,9 +89,10 @@ export const RecommendedAdsItem = ({ cardItems }: RecommendedAdsItemProps): JSX.
       cardItems.map(card => (
         <CartBlock key={card.id}>
           <CartWrapper>
-            <PhotoBox>
+            {/* <PhotoBox>
               <img src={card.image} alt={card.name} loading="lazy" decoding="async" />;
-            </PhotoBox>
+            </PhotoBox> */}
+            <PhotoBox src={card.image} alt={card.name} height="184px" backgroundColor="#c4c4c4" />
             <CartContent>
               <PriceBlock>
                 {card.price}

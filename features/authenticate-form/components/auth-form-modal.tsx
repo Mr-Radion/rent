@@ -14,7 +14,7 @@ type AuthFormProps = {
 export const AuthenticationFormModal: React.FC<AuthFormProps> = ({ opened, onClose }) => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { data } = useSelector(({ userAuth }: any) => userAuth);
+  const { userData } = useSelector(({ userAuth }: any) => userAuth);
   const [phoneValid, setPhoneValid] = React.useState(false);
   // const [codeSent, setCodeSent] = React.useState(false);
   const [codeValid, setCodeValid] = React.useState(false);
@@ -26,7 +26,7 @@ export const AuthenticationFormModal: React.FC<AuthFormProps> = ({ opened, onClo
   });
   const [formType, setFormType] = React.useState<any>('I`m owner');
 
-  // console.log(data, code);
+  // console.log(userData, code);
 
   // Todo
   // 1. Диспатч для верификации с отправкой номера (при нажатии на кнопку продолжить в первом окне срабатывает)
@@ -76,7 +76,7 @@ export const AuthenticationFormModal: React.FC<AuthFormProps> = ({ opened, onClo
 
   return (
     <Modal modalOpened={opened} onClose={onClose} title="Log In and register">
-      {data && data.msg === 'User does not exist' ? (
+      {userData && userData.msg === 'User does not exist' ? (
         <>
           <RegisterForm
             type={formType}
@@ -100,7 +100,7 @@ export const AuthenticationFormModal: React.FC<AuthFormProps> = ({ opened, onClo
       ) : (
         <>
           <LoginForm
-            data={data}
+            data={userData}
             tel={form.tel}
             code={form.code}
             handleInput={handleInput}

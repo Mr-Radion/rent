@@ -42,13 +42,14 @@ export const AuthApi = {
     return data.then(response => response.json());
   },
   logIn(token: any): any {
-    fetch('/api/login', {
+    const data = fetch('/api/login', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ token }),
     });
+    return data.then(response => response.json());
   },
   signUp(postData: any): Promise<any> {
     let formBody: any = [];
@@ -72,12 +73,13 @@ export const AuthApi = {
     return data.then(response => response.json());
   },
   logOut(): any {
-    fetch('/api/logout', {
+    const data = fetch('/api/logout', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({}),
     });
+    return data.then(response => response.json());
   },
 };

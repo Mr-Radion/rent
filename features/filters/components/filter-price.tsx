@@ -130,3 +130,5 @@ export const FilterPrice: React.FC<FilterPriceProps> = React.memo(({ onClickFilt
     </SelectFilterType>
   );
 });
+
+// Убрать запятые при вводе в инпут (точки можно оставить)

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 import { Header, Footer, CenterContent, navMainData, MainNav } from '../features/common';
 import PageNotFound from './404';
 import { MainTemplate, ButtonPrimary, CheckboxCustom, CheckOnBasic } from '../ui';
@@ -89,12 +90,21 @@ const BorderBottom = styled.div`
 `;
 
 function FavoritesPage({ token }): JSX.Element {
-  if (!token) {
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
+  if (!token && !tokenT) {
     return <PageNotFound />;
   }
+
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} token={token} />}
+      header={<Header userNavMenu={navMainData} token={token || tokenT} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }

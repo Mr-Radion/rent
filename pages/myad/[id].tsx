@@ -4,8 +4,9 @@
 // import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import shortid from 'shortid';
-import PageNotFound from '../404';
+import React from 'react';
 
+import PageNotFound from '../404';
 import { Header, Footer, navMainData } from '../../features/common';
 import { filterPropertyItems, filterDistrictItems } from '../../features/filters/lib';
 // import { wrapper } from '../../features/common/store';
@@ -157,16 +158,24 @@ const CardsWrap = styled.div`
 `;
 
 function MyAdPage({ token, ad }) {
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
   // let iconName = foo ? bar : foobar;
 
   // const router = useRouter();
-  console.log(token, ad, ad.description);
-  if (!token) {
+  // console.log(token, ad, ad.description);
+  if (!token && !tokenT) {
     return <PageNotFound />;
   }
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} />}
+      header={<Header userNavMenu={navMainData} token={token || tokenT} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }
@@ -357,7 +366,7 @@ function MyAdPage({ token, ad }) {
   );
 }
 
-export async function getServerSideProps({ req, res, params }) {
+export async function getServerSideProps({ req, _res, params }) {
   let formBody: any = [];
   const encodedKey = encodeURIComponent('id');
   const encodedValue = encodeURIComponent(params.id);

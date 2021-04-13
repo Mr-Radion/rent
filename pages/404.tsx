@@ -1,9 +1,18 @@
+import React from 'react';
 import { Header, navMainData } from '../features/common';
 import { MainTemplate, HouseIcon, LinkButton, PageNotFoundIcon } from '../ui';
 
 function ErrorPage(): JSX.Element {
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
   return (
-    <MainTemplate header={<Header userNavMenu={navMainData} />}>
+    <MainTemplate header={<Header userNavMenu={navMainData} token={tokenT} />}>
       <div className="error_wrapper">
         <div className="bg-gradient">
           <PageNotFoundIcon width="672" height="272" marginTop="266px" />

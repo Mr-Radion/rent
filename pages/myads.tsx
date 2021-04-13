@@ -114,7 +114,15 @@ const AdCard = styled.div`
 `;
 
 function MyAdsPage({ token }): JSX.Element {
-  if (!token) {
+  const [tokenT, setToken] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('/api/auth')
+      .then(response => response.json())
+      .then(res => setToken(res.success));
+  }, []);
+
+  if (!token && !tokenT) {
     return <PageNotFound />;
   }
   const userMenuRef = React.useRef();
@@ -129,7 +137,7 @@ function MyAdsPage({ token }): JSX.Element {
 
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} token={token} />}
+      header={<Header userNavMenu={navMainData} token={token || !tokenT} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }

@@ -1,6 +1,4 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
-// import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { AuthenticationFormModal } from '../../authenticate-form';
 import { UserMenu } from './user-menu';
@@ -57,33 +55,25 @@ export function NoticeDropDown(): JSX.Element {
   );
 }
 
-export const ToggleMenuSign = ({ userNavMenu, toggle, token }: any) => {
-  // const { tokenT, status } = useSelector(({ userAuth }: any) => userAuth);
-  // const router = useRouter();
-  // let auth = status === 'LOADED' ? '' : tokenT;
-  // console.log(tokenT);
-  console.log(token);
-  // if (router.pathname === '/404') auth = token;
-  return (
-    <>
-      {token ? (
-        <UserMenu userMenuItems={userNavMenu} />
-      ) : (
-        <ButtonPrimary
-          width="5.751rem"
-          background="#CDE0E4"
-          height="2.251rem"
-          onClick={toggle}
-          color="#1995AD"
-          border-color="#1995AD"
-          fontSize="17px"
-        >
-          Sign In
-        </ButtonPrimary>
-      )}
-    </>
-  );
-};
+export const ToggleMenuSign = ({ userNavMenu, toggle, token }: any) => (
+  <>
+    {token ? (
+      <UserMenu userMenuItems={userNavMenu} />
+    ) : (
+      <ButtonPrimary
+        width="5.751rem"
+        background="#CDE0E4"
+        height="2.251rem"
+        onClick={toggle}
+        color="#1995AD"
+        border-color="#1995AD"
+        fontSize="17px"
+      >
+        Sign In
+      </ButtonPrimary>
+    )}
+  </>
+);
 
 export const Header: React.FC<any> = ({ userNavMenu, token }: HeaderProps) => {
   const [opened, setOpened] = React.useState(false);
