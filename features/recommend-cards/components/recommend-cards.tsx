@@ -48,23 +48,6 @@ const CartAdress = styled.div`
   }
 `;
 
-// const PhotoBox = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 184px;
-//   background-color: #c4c4c4;
-//   position: relative;
-//   img {
-//     position: absolute;
-//     min-width: 100%;
-//     max-width: 100%;
-//     min-height: 100%;
-//     max-height: 100%;
-//     object-fit: cover;
-//   }
-// `;
-
 const PriceBlock = styled.div`
   font-style: normal;
   font-weight: 900;
