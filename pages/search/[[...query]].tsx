@@ -1,6 +1,6 @@
 // import ErrorPage from 'next/error';
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 // import useSWR from 'swr';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
@@ -94,16 +94,6 @@ const FavCard = styled.div`
 //   return <input type="text" placeholder="Search" onChange={e => handleInputChange(e)} />;
 // });
 
-// const fetcher = async url => {
-//   const res = await fetch(url);
-//   const data = await res.json();
-
-//   if (res.status !== 200) {
-//     throw new Error(data.message);
-//   }
-//   return data;
-// };
-
 function SearchResultPage({ token }) {
   const [tokenT, setToken] = React.useState(null);
 
@@ -120,7 +110,7 @@ function SearchResultPage({ token }) {
   // const data = fetch(`/api/search/${query.location}`).then(response => response.json()).then(res => res);
 
   const [ads, setAds] = React.useState(null);
-  console.log(query?.minsquare, query?.maxsquare);
+  // console.log(query?.minsquare, query?.maxsquare);
 
   React.useEffect(() => {
     fetch('/api/search', {
@@ -145,7 +135,7 @@ function SearchResultPage({ token }) {
       }),
     })
       .then(response => response.json())
-      .then(res => setAds(res))
+      .then(res => setAds(res.results))
       .catch(error => console.log(error));
   }, [query]);
 
@@ -153,7 +143,7 @@ function SearchResultPage({ token }) {
   console.log(ads);
 
   const [searchQuery, setSearchQuery] = React.useState<any>('');
-  const searchResult = useSelector(({ searchListResult }: any) => searchListResult);
+  // const searchResult = useSelector(({ searchListResult }: any) => searchListResult);
   const [searchClick, setSearchClick] = React.useState<boolean>(false);
   // const filter = useSelector(({ filters }: any) => filters);
   // const locationRoute =
@@ -236,55 +226,59 @@ function SearchResultPage({ token }) {
               </ButtonPrimary>
             </FavoritesHead>
           </div>
-          <>
-            {/* {searchResult.result !== '' */}
-            {/* // ? searchResult.result.map(obj => ( */}
-            <FavCard
-            // key={obj.id}
-            >
-              {/* <div className="img" /> */}
-              <PhotoBox
-                className="img"
-                backgroundColor="#000"
-                height="316px"
-                width="316px"
-                margin="0 30px 0 50px"
-              />
-              <div className="desc">
-                <H2 fontSize="28px" fontWeight="bold">
-                  {/* {obj.ad_name} */}
-                </H2>
-                <H3 color="#00A9B0" margin="4px 0 42px 0" textDecorationLine="underline">
-                  {/* {obj.location.district} */}
-                </H3>
-                <H2>3 bedrooms, 72 m2</H2>
-                <H2 fontSize="28px" margin="8px 0 25px 0">
-                  1 000 000 €{' '}
-                </H2>
-                <Text color="#7E7E7E">
-                  Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two
-                  floors with total of 6 apartments (3 apartments per floor) and features high
-                  standards and modern design.
-                </Text>
-              </div>
-              <div className="info">
-                <div className="infoImg" />
-                <div>
-                  <H3 margin="0 0 50px 0">Lighthouse</H3>
-                  <H4 color="#7E7E7E">Language:</H4>
-                  <H4>English, Russian</H4>
-                </div>
-                <ButtonPrimary background="#00A9B0" width="175px" height="32px" color="#FAFAFA">
-                  +357 220 52 ...
-                </ButtonPrimary>
-                <TextSpan color="#BCBABE" margin="auto 0 0 0">
-                  posted 3 month ago
-                </TextSpan>
-              </div>
-            </FavCard>
-            {/* ))
-              // : 'Не найдено'} */}
-          </>
+          <div>
+            <>
+              {ads &&
+                ads.map(ad => (
+                  <FavCard key={ad.id}>
+                    {/* <div className="img" /> */}
+                    <PhotoBox
+                      className="img"
+                      backgroundColor="#000"
+                      height="316px"
+                      width="316px"
+                      margin="0 30px 0 50px"
+                    />
+                    <div className="desc">
+                      <H2 fontSize="28px" fontWeight="bold">
+                        {/* {obj.ad_name} */}
+                      </H2>
+                      <H3 color="#00A9B0" margin="4px 0 42px 0" textDecorationLine="underline">
+                        {/* {obj.location.district} */}
+                      </H3>
+                      <H2>3 bedrooms, 72 m2</H2>
+                      <H2 fontSize="28px" margin="8px 0 25px 0">
+                        1 000 000 €{' '}
+                      </H2>
+                      <Text color="#7E7E7E">
+                        Luxury apartment for sale in Strovolos, Nicosia. The building is comprised
+                        of two floors with total of 6 apartments (3 apartments per floor) and
+                        features high standards and modern design.
+                      </Text>
+                    </div>
+                    <div className="info">
+                      <div className="infoImg" />
+                      <div>
+                        <H3 margin="0 0 50px 0">Lighthouse</H3>
+                        <H4 color="#7E7E7E">Language:</H4>
+                        <H4>English, Russian</H4>
+                      </div>
+                      <ButtonPrimary
+                        background="#00A9B0"
+                        width="175px"
+                        height="32px"
+                        color="#FAFAFA"
+                      >
+                        +357 220 52 ...
+                      </ButtonPrimary>
+                      <TextSpan color="#BCBABE" margin="auto 0 0 0">
+                        posted 3 month ago
+                      </TextSpan>
+                    </div>
+                  </FavCard>
+                ))}
+            </>
+          </div>
         </Search>
       </MainTemplate>
     </Container>

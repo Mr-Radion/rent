@@ -9,7 +9,8 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
       class="recommend-cards__CartWrapper-sc-5yu6d2-1 dwAudU"
     >
       <div
-        class="recommend-cards__PhotoBox-sc-5yu6d2-4 igDPin"
+        class="photobox__PhotoBoxStyled-smpouz-0 eKvvdP"
+        height="184px"
       >
         <img
           alt="string"
@@ -23,7 +24,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
         class="recommend-cards__CartContent-sc-5yu6d2-2 txYE"
       >
         <div
-          class="recommend-cards__PriceBlock-sc-5yu6d2-5 bevntd"
+          class="recommend-cards__PriceBlock-sc-5yu6d2-4 knJDVs"
         >
           4000
           <span>
@@ -31,7 +32,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
           </span>
         </div>
         <div
-          class="recommend-cards__TextBlock-sc-5yu6d2-6 fBUgLn"
+          class="recommend-cards__TextBlock-sc-5yu6d2-5 kpFVYA"
         >
           3
           <span>
@@ -74,7 +75,8 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
       class="recommend-cards__CartWrapper-sc-5yu6d2-1 dwAudU"
     >
       <div
-        class="recommend-cards__PhotoBox-sc-5yu6d2-4 igDPin"
+        class="photobox__PhotoBoxStyled-smpouz-0 eKvvdP"
+        height="184px"
       >
         <img
           alt="string"
@@ -88,7 +90,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
         class="recommend-cards__CartContent-sc-5yu6d2-2 txYE"
       >
         <div
-          class="recommend-cards__PriceBlock-sc-5yu6d2-5 bevntd"
+          class="recommend-cards__PriceBlock-sc-5yu6d2-4 knJDVs"
         >
           4000
           <span>
@@ -96,7 +98,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
           </span>
         </div>
         <div
-          class="recommend-cards__TextBlock-sc-5yu6d2-6 fBUgLn"
+          class="recommend-cards__TextBlock-sc-5yu6d2-5 kpFVYA"
         >
           3
           <span>
@@ -139,7 +141,8 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
       class="recommend-cards__CartWrapper-sc-5yu6d2-1 dwAudU"
     >
       <div
-        class="recommend-cards__PhotoBox-sc-5yu6d2-4 igDPin"
+        class="photobox__PhotoBoxStyled-smpouz-0 eKvvdP"
+        height="184px"
       >
         <img
           alt="string"
@@ -153,7 +156,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
         class="recommend-cards__CartContent-sc-5yu6d2-2 txYE"
       >
         <div
-          class="recommend-cards__PriceBlock-sc-5yu6d2-5 bevntd"
+          class="recommend-cards__PriceBlock-sc-5yu6d2-4 knJDVs"
         >
           4000
           <span>
@@ -161,7 +164,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
           </span>
         </div>
         <div
-          class="recommend-cards__TextBlock-sc-5yu6d2-6 fBUgLn"
+          class="recommend-cards__TextBlock-sc-5yu6d2-5 kpFVYA"
         >
           3
           <span>
@@ -204,7 +207,8 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
       class="recommend-cards__CartWrapper-sc-5yu6d2-1 dwAudU"
     >
       <div
-        class="recommend-cards__PhotoBox-sc-5yu6d2-4 igDPin"
+        class="photobox__PhotoBoxStyled-smpouz-0 eKvvdP"
+        height="184px"
       >
         <img
           alt="string"
@@ -218,7 +222,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
         class="recommend-cards__CartContent-sc-5yu6d2-2 txYE"
       >
         <div
-          class="recommend-cards__PriceBlock-sc-5yu6d2-5 bevntd"
+          class="recommend-cards__PriceBlock-sc-5yu6d2-4 knJDVs"
         >
           4000
           <span>
@@ -226,7 +230,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
           </span>
         </div>
         <div
-          class="recommend-cards__TextBlock-sc-5yu6d2-6 fBUgLn"
+          class="recommend-cards__TextBlock-sc-5yu6d2-5 kpFVYA"
         >
           3
           <span>
@@ -269,7 +273,8 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
       class="recommend-cards__CartWrapper-sc-5yu6d2-1 dwAudU"
     >
       <div
-        class="recommend-cards__PhotoBox-sc-5yu6d2-4 igDPin"
+        class="photobox__PhotoBoxStyled-smpouz-0 eKvvdP"
+        height="184px"
       >
         <img
           alt="string"
@@ -283,7 +288,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
         class="recommend-cards__CartContent-sc-5yu6d2-2 txYE"
       >
         <div
-          class="recommend-cards__PriceBlock-sc-5yu6d2-5 bevntd"
+          class="recommend-cards__PriceBlock-sc-5yu6d2-4 knJDVs"
         >
           4000
           <span>
@@ -291,7 +296,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
           </span>
         </div>
         <div
-          class="recommend-cards__TextBlock-sc-5yu6d2-6 fBUgLn"
+          class="recommend-cards__TextBlock-sc-5yu6d2-5 kpFVYA"
         >
           3
           <span>
@@ -334,7 +339,8 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
       class="recommend-cards__CartWrapper-sc-5yu6d2-1 dwAudU"
     >
       <div
-        class="recommend-cards__PhotoBox-sc-5yu6d2-4 igDPin"
+        class="photobox__PhotoBoxStyled-smpouz-0 eKvvdP"
+        height="184px"
       >
         <img
           alt="string"
@@ -348,7 +354,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
         class="recommend-cards__CartContent-sc-5yu6d2-2 txYE"
       >
         <div
-          class="recommend-cards__PriceBlock-sc-5yu6d2-5 bevntd"
+          class="recommend-cards__PriceBlock-sc-5yu6d2-4 knJDVs"
         >
           4000
           <span>
@@ -356,7 +362,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
           </span>
         </div>
         <div
-          class="recommend-cards__TextBlock-sc-5yu6d2-6 fBUgLn"
+          class="recommend-cards__TextBlock-sc-5yu6d2-5 kpFVYA"
         >
           3
           <span>
@@ -399,7 +405,8 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
       class="recommend-cards__CartWrapper-sc-5yu6d2-1 dwAudU"
     >
       <div
-        class="recommend-cards__PhotoBox-sc-5yu6d2-4 igDPin"
+        class="photobox__PhotoBoxStyled-smpouz-0 eKvvdP"
+        height="184px"
       >
         <img
           alt="string"
@@ -413,7 +420,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
         class="recommend-cards__CartContent-sc-5yu6d2-2 txYE"
       >
         <div
-          class="recommend-cards__PriceBlock-sc-5yu6d2-5 bevntd"
+          class="recommend-cards__PriceBlock-sc-5yu6d2-4 knJDVs"
         >
           4000
           <span>
@@ -421,7 +428,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
           </span>
         </div>
         <div
-          class="recommend-cards__TextBlock-sc-5yu6d2-6 fBUgLn"
+          class="recommend-cards__TextBlock-sc-5yu6d2-5 kpFVYA"
         >
           3
           <span>
@@ -464,7 +471,8 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
       class="recommend-cards__CartWrapper-sc-5yu6d2-1 dwAudU"
     >
       <div
-        class="recommend-cards__PhotoBox-sc-5yu6d2-4 igDPin"
+        class="photobox__PhotoBoxStyled-smpouz-0 eKvvdP"
+        height="184px"
       >
         <img
           alt="string"
@@ -478,7 +486,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
         class="recommend-cards__CartContent-sc-5yu6d2-2 txYE"
       >
         <div
-          class="recommend-cards__PriceBlock-sc-5yu6d2-5 bevntd"
+          class="recommend-cards__PriceBlock-sc-5yu6d2-4 knJDVs"
         >
           4000
           <span>
@@ -486,7 +494,7 @@ exports[`RecommendedAdsItem matches snapshot 1`] = `
           </span>
         </div>
         <div
-          class="recommend-cards__TextBlock-sc-5yu6d2-6 fBUgLn"
+          class="recommend-cards__TextBlock-sc-5yu6d2-5 kpFVYA"
         >
           3
           <span>

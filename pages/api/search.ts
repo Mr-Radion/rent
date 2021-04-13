@@ -10,6 +10,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
       ? p?.location.district === body?.location
       : true;
   const typeProperty = p => (body?.typeProperty ? p?.type_property === body?.typeProperty : true);
+
   const price = p => {
     if (body?.minprice && !body?.maxprice) {
       return p?.price >= Number(body?.minprice);
@@ -68,7 +69,9 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
       ? p?.type_bedrooms >= body?.bedroomsType[0].toUpperCase() + body?.bedroomsType.slice(1)
       : true;
 
-  const filtered = bedroomsFiltered.filter(p => {
+  const filterData = bedroomsFiltered.length !== 0 ? bedroomsFiltered : search_result;
+
+  const filtered = filterData.filter(p => {
     return (
       adName(p) &&
       locationDistrict(p) &&
@@ -82,7 +85,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
   switch (method) {
     case 'POST':
       if (filtered.length > 0) {
-        res.status(200).json({ results: filtered });
+        res.status(200).json({ results: filtered && filtered });
       } else {
         res.status(404).json({ message: 'Search results: not found.' });
       }

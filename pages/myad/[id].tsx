@@ -170,9 +170,6 @@ function MyAdPage({ token, ad }) {
 
   // const router = useRouter();
   // console.log(token, ad, ad.description);
-  if (!token && !tokenT) {
-    return <PageNotFound />;
-  }
   return (
     <MainTemplate
       header={<Header userNavMenu={navMainData} token={token || tokenT} />}
