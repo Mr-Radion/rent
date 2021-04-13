@@ -4,8 +4,21 @@ import { useSelector, useDispatch } from 'react-redux';
 // import useSWR from 'swr';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+
 import Container from '../../lib/seo-container/container';
-import { MainTemplate, ButtonPrimary, H1, H2, H3, H4, Sorting, Input } from '../../ui';
+import {
+  MainTemplate,
+  ButtonPrimary,
+  H1,
+  H2,
+  H3,
+  H4,
+  Sorting,
+  Input,
+  PhotoBox,
+  Text,
+  TextSpan,
+} from '../../ui';
 import { SearchCart } from '../../features/search-list';
 // import { fetchSearchList } from '../../features/search-list/ducks';
 import { Header, Footer, navMainData } from '../../features/common';
@@ -229,7 +242,14 @@ function SearchResultPage({ token }) {
             <FavCard
             // key={obj.id}
             >
-              <div className="img" />
+              {/* <div className="img" /> */}
+              <PhotoBox
+                className="img"
+                backgroundColor="#000"
+                height="316px"
+                width="316px"
+                margin="0 30px 0 50px"
+              />
               <div className="desc">
                 <H2 fontSize="28px" fontWeight="bold">
                   {/* {obj.ad_name} */}
@@ -241,11 +261,11 @@ function SearchResultPage({ token }) {
                 <H2 fontSize="28px" margin="8px 0 25px 0">
                   1 000 000 €{' '}
                 </H2>
-                <H3 color="#7E7E7E">
+                <Text color="#7E7E7E">
                   Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two
                   floors with total of 6 apartments (3 apartments per floor) and features high
                   standards and modern design.
-                </H3>
+                </Text>
               </div>
               <div className="info">
                 <div className="infoImg" />
@@ -257,9 +277,9 @@ function SearchResultPage({ token }) {
                 <ButtonPrimary background="#00A9B0" width="175px" height="32px" color="#FAFAFA">
                   +357 220 52 ...
                 </ButtonPrimary>
-                <H3 color="#BCBABE" margin="auto 0 0 0">
+                <TextSpan color="#BCBABE" margin="auto 0 0 0">
                   posted 3 month ago
-                </H3>
+                </TextSpan>
               </div>
             </FavCard>
             {/* ))
