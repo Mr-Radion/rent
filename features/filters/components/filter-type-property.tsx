@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useRouter } from 'next/router';
 
 import { useOnClickOutside } from '../../../lib/custom-hooks';
 import { sortedAlphabetically, commasAndSpaces } from '../../../lib/formatted';
@@ -16,12 +15,12 @@ type FilterPropertyProps = {
   onClickFilterPropertyType: (type: any) => void;
   activeLabel: any;
   items: any;
+  page: string;
 };
 
 export const FilterTypeProperty: React.FC<FilterPropertyProps> = React.memo(
-  ({ onClickFilterPropertyType, activeLabel, items }) => {
+  ({ onClickFilterPropertyType, activeLabel, items, page }) => {
     const filterRef = React.useRef();
-    const router = useRouter();
     const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
     useOnClickOutside(filterRef, () => setVisiblePopup(false));
 
@@ -41,8 +40,8 @@ export const FilterTypeProperty: React.FC<FilterPropertyProps> = React.memo(
         tablet="100%"
         ref={filterRef}
         visiblePopup={visiblePopup}
-        padding={router.pathname === '/' ? '20px 16px' : ''}
-        arrowDefault={router.pathname === '/' ? 'arrowDefault' : ''}
+        padding={!page ? '20px 16px' : ''}
+        arrowDefault={!page ? 'arrowDefault' : ''}
       >
         <div className="label">
           <button

@@ -143,7 +143,7 @@ function SearchResultPage({ token }) {
       >
         <Search>
           <SearchBox>
-            <Filters />
+            <Filters page="searchList" />
             <SearchRun />
           </SearchBox>
           <div className="head">

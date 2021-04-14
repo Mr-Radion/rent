@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
-import { useRouter } from 'next/router';
 
 import { SelectFilterType, NumberField } from '../../../ui';
 import { useOnClickOutside } from '../../../lib/custom-hooks';
@@ -30,11 +29,11 @@ const AreaWrapper: StyledComponent<any, any> = styled.div`
 
 type FilterAreaProps = {
   onClickFilterArea: (obj: any) => void;
+  page: string;
 };
 
-export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilterArea }) => {
+export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilterArea, page }) => {
   const filterRef = React.useRef();
-  const router = useRouter();
   const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
   const [form, setForm] = React.useState<FilterAreaState>({
     from: 0,
@@ -57,7 +56,7 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
     <SelectFilterType
       ref={filterRef}
       visiblePopup={visiblePopup}
-      arrowDefault={router.pathname === '/' ? 'arrowDefault' : ''}
+      arrowDefault={!page ? 'arrowDefault' : ''}
     >
       <div className="label">
         <button

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Link from 'next/link';
+
 import { MapMarker, PhotoBox } from '../../../ui';
 import { RecommendedAdsState } from '../ducks';
 
@@ -72,10 +74,16 @@ export const RecommendedAdsItem = ({ cardItems }: RecommendedAdsItemProps): JSX.
       cardItems.map(card => (
         <CartBlock key={card.id}>
           <CartWrapper>
-            {/* <PhotoBox>
-              <img src={card.image} alt={card.name} loading="lazy" decoding="async" />;
-            </PhotoBox> */}
-            <PhotoBox src={card.image} alt={card.name} height="184px" backgroundColor="#c4c4c4" />
+            <Link href={`/myad/${card.id}`}>
+              <a target="_blank">
+                <PhotoBox
+                  src={card.image}
+                  alt={card.name}
+                  height="184px"
+                  backgroundColor="#c4c4c4"
+                />
+              </a>
+            </Link>
             <CartContent>
               <PriceBlock>
                 {card.price}

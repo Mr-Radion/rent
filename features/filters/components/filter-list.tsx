@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import shortid from 'shortid';
-import { useRouter } from 'next/router';
 
 import {
   setFilterTypePropertyBy,
@@ -95,9 +94,8 @@ const FilterList = styled.div`
   }
 `;
 
-export const Filters = React.memo(() => {
+export const Filters = React.memo(({ page }: any) => {
   const dispatch = useDispatch();
-  const router = useRouter();
   const {
     filterTypePropertyBy,
     filterBedroomsCounterBy,
@@ -136,7 +134,7 @@ export const Filters = React.memo(() => {
 
   return (
     <FiltersBox>
-      {router.pathname === '/' && (
+      {!page && (
         <FilterNav>
           {filterNavItems &&
             filterNavItems.map((item, index) => (
@@ -166,6 +164,7 @@ export const Filters = React.memo(() => {
               onClickFilterPropertyType={onSelectFilterPropertyType}
               activeLabel={filterTypePropertyBy}
               items={filterPropertyItems}
+              page={page}
             />
             <div className="mobileFilter">
               <p>Rooms</p>
@@ -211,14 +210,16 @@ export const Filters = React.memo(() => {
               activeLabelCounter={filterBedroomsCounterBy}
               activeLabelType={filterBedroomsTypeBy}
               items={filterBedroomsItems}
+              page={page}
             />
-            <FilterPrice onClickFilterPrice={onSelectFilterPrice} />
-            <FilterArea onClickFilterArea={onSelectClickFilterArea} />
+            <FilterPrice onClickFilterPrice={onSelectFilterPrice} page={page} />
+            <FilterArea onClickFilterArea={onSelectClickFilterArea} page={page} />
             {/* </div> */}
             <FilterLocation
               onClickFilterLocation={onSelectFilterLocation}
               activeAddress={filterLocationBy}
               items={filterDistrictItems}
+              page={page}
             />
           </>
         )}
@@ -228,6 +229,7 @@ export const Filters = React.memo(() => {
               onClickFilterPropertyType={onSelectFilterPropertyType}
               activeLabel={filterTypePropertyBy}
               items={filterPropertyItems}
+              page={page}
             />
             <FilterBedrooms
               onClickFilterBedroomsCounter={onSelectFilterBedroomsCounter}
@@ -235,13 +237,15 @@ export const Filters = React.memo(() => {
               activeLabelCounter={filterBedroomsCounterBy}
               activeLabelType={filterBedroomsTypeBy}
               items={filterBedroomsItems}
+              page={page}
             />
-            <FilterPrice onClickFilterPrice={onSelectFilterPrice} />
-            <FilterArea onClickFilterArea={onSelectClickFilterArea} />
+            <FilterPrice onClickFilterPrice={onSelectFilterPrice} page={page} />
+            <FilterArea onClickFilterArea={onSelectClickFilterArea} page={page} />
             <FilterLocation
               onClickFilterLocation={onSelectFilterLocation}
               activeAddress={filterLocationBy}
               items={filterDistrictItems}
+              page={page}
             />
           </>
         )}
