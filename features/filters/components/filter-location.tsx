@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
 // import classNames from 'classnames';
+
 import { sortedAscending, commasAndSpaces } from '../../../lib/formatted';
 import { useOnClickOutside } from '../../../lib/custom-hooks';
 import {
@@ -20,10 +21,11 @@ type FilterLocationProps = {
   onClickFilterLocation: (adress: any) => void;
   items: any;
   activeAddress: string[];
+  page: string;
 };
 
 export const FilterLocation: React.FC<FilterLocationProps> = React.memo(
-  ({ onClickFilterLocation, items, activeAddress }) => {
+  ({ onClickFilterLocation, items, activeAddress, page }) => {
     const filterRef = React.useRef();
     const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
     useOnClickOutside(filterRef, () => setVisiblePopup(false));
@@ -57,10 +59,10 @@ export const FilterLocation: React.FC<FilterLocationProps> = React.memo(
         // display="flex"
         // width="calc(100% - 1000px)"
         // width="40%"
+        arrowDefault={!page ? 'arrowDefault' : ''}
         flexBasis="40%"
         tablet="100%"
         minWidth="250px"
-        arrowDefault
       >
         <div className="label label__location">
           <button
@@ -97,5 +99,3 @@ export const FilterLocation: React.FC<FilterLocationProps> = React.memo(
     );
   },
 );
-
-// сделать минимальное кол-во вводимых значений от 3, после чего только выполнять запрос при необходимости

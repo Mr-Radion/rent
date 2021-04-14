@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
+
 import { SelectFilterType, NumberField } from '../../../ui';
 import { useOnClickOutside } from '../../../lib/custom-hooks';
 import { numberIntervalsFormatted } from '../../../lib/formatted';
@@ -28,9 +29,10 @@ const AreaWrapper: StyledComponent<any, any> = styled.div`
 
 type FilterAreaProps = {
   onClickFilterArea: (obj: any) => void;
+  page: string;
 };
 
-export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilterArea }) => {
+export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilterArea, page }) => {
   const filterRef = React.useRef();
   const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
   const [form, setForm] = React.useState<FilterAreaState>({
@@ -51,7 +53,11 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
   }, [form.from, form.to]);
 
   return (
-    <SelectFilterType ref={filterRef} visiblePopup={visiblePopup} arrowDefault>
+    <SelectFilterType
+      ref={filterRef}
+      visiblePopup={visiblePopup}
+      arrowDefault={!page ? 'arrowDefault' : ''}
+    >
       <div className="label">
         <button
           onClick={() => setVisiblePopup(!visiblePopup)}
@@ -110,5 +116,3 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
     </SelectFilterType>
   );
 });
-
-// Убрать запятые при вводе в инпут (точки можно оставить)

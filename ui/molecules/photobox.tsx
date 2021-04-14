@@ -9,6 +9,7 @@ type PhotoProps = {
   fontSize?: string;
   backgroundColor?: string;
   margin?: string;
+  marginLeft?: string;
 };
 
 const PhotoBoxStyled: StyledComponent<any, any> = styled.div`
@@ -24,8 +25,10 @@ const PhotoBoxStyled: StyledComponent<any, any> = styled.div`
     marginRight,
     fontSize,
     backgroundColor,
+    marginLeft,
     margin,
   }: PhotoProps) => css`
+    cursor: pointer;
     font-size: ${fontSize};
     width: ${width};
     height: ${height};
@@ -33,6 +36,7 @@ const PhotoBoxStyled: StyledComponent<any, any> = styled.div`
     background: ${background};
     background-color: ${backgroundColor};
     margin-right: ${marginRight};
+    margin-left: ${marginLeft};
     margin: ${margin};
     img {
       position: absolute;
@@ -45,8 +49,23 @@ const PhotoBoxStyled: StyledComponent<any, any> = styled.div`
   `}
 `;
 
-export const PhotoBox = ({ src, className, alt, height, width, backgroundColor, margin }: any) => (
-  <PhotoBoxStyled height={height} backgroundColor={backgroundColor} width={width} margin={margin}>
+export const PhotoBox = ({
+  src,
+  className,
+  alt,
+  height,
+  width,
+  backgroundColor,
+  margin,
+  marginLeft,
+}: any) => (
+  <PhotoBoxStyled
+    height={height}
+    backgroundColor={backgroundColor}
+    width={width}
+    margin={margin}
+    marginLeft={marginLeft}
+  >
     <img src={src} alt={alt} loading="lazy" decoding="async" className={className} />;
   </PhotoBoxStyled>
 );
