@@ -116,5 +116,3 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
     </SelectFilterType>
   );
 });
-
-// Убрать запятые при вводе в инпут (точки можно оставить)

@@ -99,5 +99,3 @@ export const FilterLocation: React.FC<FilterLocationProps> = React.memo(
     );
   },
 );
-
-// сделать минимальное кол-во вводимых значений от 3, после чего только выполнять запрос при необходимости
