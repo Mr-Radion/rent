@@ -1,7 +1,10 @@
+/* eslint-disable guard-for-in */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-nested-ternary */
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import shortid from 'shortid';
+import { useRouter } from 'next/router';
 import {
   AboutApartment,
   AboutHouse,
@@ -110,12 +113,136 @@ const BreadCrumbs = styled.div`
 `;
 export function AddingAdPage({ token }): JSX.Element {
   const [tokenT, setToken] = React.useState(null);
+  const router = useRouter();
+  const [adId, setAdId] = React.useState(null);
+  const [publich, sePublich] = React.useState(false);
 
   React.useEffect(() => {
     fetch('/api/auth')
       .then(response => response.json())
       .then(res => setToken(res.success));
   }, []);
+
+  console.log(adId, publich);
+
+  React.useEffect(() => {
+    // if (adId) router.push(`/myad/${adId}`);
+    if (adId) router.push('/myads');
+    if (publich && !token) router.push('/join');
+  }, [adId, publich]);
+
+  const onSelectAddAd = () => {
+    sePublich(true);
+    if (token) {
+      const details = {
+        users_id: 33,
+        method: 'rent',
+        type: 'apartment',
+        phone: '89031671617',
+        // img: [],
+        // facilities: [],
+        // title:
+        // description:
+        // price_month:
+        // deposit:
+        // rent_period:
+        // expences:
+        // bills:
+        // postcode:
+        // street:
+        // house:
+        // city:
+        // area:
+        // lat:
+        // lng:
+        // bedrooms:
+        // bathrooms:
+        // floors:
+        // type_land:
+        // square:
+        // b_floors:
+        // b_year:
+        // b_name:
+        // b_material:
+        // elevator:
+        // brand_new:
+        // condition:
+        // furnishing:
+        // children:
+        // pets:
+        // electricity:
+        // water:
+        // sewage:
+        // drive_ways:
+        // type_commercial:
+        // height:
+        // parking:
+        // reception:
+        // youtube:
+        // whatsApp:
+      };
+      let formBody: any = [];
+      for (const property in details) {
+        const encodedKey = encodeURIComponent(property);
+        const encodedValue = encodeURIComponent(details[property]);
+        formBody.push(`${encodedKey}=${encodedValue}`);
+      }
+      formBody = formBody.join('&');
+      const data = fetch('https://api.rentup.cy/json?func=mobile&action=create_ads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        },
+        body: formBody,
+      });
+      data.then(response => response.json()).then(res => setAdId(res.OK));
+      // users_id: 33
+      // method: rent
+      // type: apartment
+      // phone: 89031671617
+      // img:
+      // facilities:
+      // title:
+      // description:
+      // price_month:
+      // deposit:
+      // rent_period:
+      // expences:
+      // bills:
+      // postcode:
+      // street:
+      // house:
+      // city:
+      // area:
+      // lat:
+      // lng:
+      // bedrooms:
+      // bathrooms:
+      // floors:
+      // type_land:
+      // square:
+      // b_floors:
+      // b_year:
+      // b_name:
+      // b_material:
+      // elevator:
+      // brand_new:
+      // condition:
+      // furnishing:
+      // children:
+      // pets:
+      // electricity:
+      // water:
+      // sewage:
+      // drive_ways:
+      // type_commercial:
+      // height:
+      // parking:
+      // reception:
+      // youtube:
+      // whatsApp:
+    }
+  };
 
   const [typeOfAccount, setAccount] = useState(null);
   const [typeOfRent, setTypeOfPeriodype] = useState(null);
@@ -149,21 +276,30 @@ export function AddingAdPage({ token }): JSX.Element {
                     <Round />
                   </LiName>
                   <>
-                    {Array.from(['Owner', 'Agent'], (type, idx) => (
-                      <ButtonPrimary
-                        fontSize="16px"
-                        minWidth="120px"
-                        height="36px"
-                        background={typeOfAccount === type ? '#00A9B0' : '#FAFAFA'}
-                        color={typeOfAccount === type ? '#FAFAFA' : '#00A9B0'}
-                        type="button"
-                        marginRight={type === 'Owner' ? '1rem' : '0'}
-                        key={`${shortid.generate()}type${idx}`}
-                        onClick={() => setAccount(type)}
-                      >
-                        {type}
-                      </ButtonPrimary>
-                    ))}
+                    <ButtonPrimary
+                      fontSize="16px"
+                      minWidth="120px"
+                      height="36px"
+                      background={typeOfAccount === 'Owner' ? '#00A9B0' : '#FAFAFA'}
+                      color={typeOfAccount === 'Owner' ? '#FAFAFA' : '#00A9B0'}
+                      type="button"
+                      marginRight="1rem"
+                      onClick={() => setAccount('Owner')}
+                    >
+                      Owner
+                    </ButtonPrimary>
+                    <ButtonPrimary
+                      fontSize="16px"
+                      minWidth="120px"
+                      height="36px"
+                      background={typeOfAccount === 'Agent' ? '#00A9B0' : '#FAFAFA'}
+                      color={typeOfAccount === 'Agent' ? '#FAFAFA' : '#00A9B0'}
+                      type="button"
+                      marginRight="0"
+                      onClick={() => setAccount('Agent')}
+                    >
+                      Agent
+                    </ButtonPrimary>
                   </>
                 </Li>
                 <Li>
@@ -172,21 +308,30 @@ export function AddingAdPage({ token }): JSX.Element {
                     <Round />
                   </LiName>
                   <>
-                    {Array.from(['Rent out', 'Sell'], (type, idx) => (
-                      <ButtonPrimary
-                        fontSize="16px"
-                        minWidth="120px"
-                        height="36px"
-                        background={typeOfRent === type ? '#00A9B0' : '#FAFAFA'}
-                        color={typeOfRent === type ? '#FAFAFA' : '#00A9B0'}
-                        type="button"
-                        marginRight={type === 'Rent out' ? '1rem' : '0'}
-                        key={`${shortid.generate()}type${idx}`}
-                        onClick={() => setTypeOfPeriodype(type)}
-                      >
-                        {type}
-                      </ButtonPrimary>
-                    ))}
+                    <ButtonPrimary
+                      fontSize="16px"
+                      minWidth="120px"
+                      height="36px"
+                      background={typeOfRent === 'Rent out' ? '#00A9B0' : '#FAFAFA'}
+                      color={typeOfRent === 'Rent out' ? '#FAFAFA' : '#00A9B0'}
+                      type="button"
+                      marginRight="1rem"
+                      onClick={() => setTypeOfPeriodype('Rent out')}
+                    >
+                      Rent out
+                    </ButtonPrimary>
+                    <ButtonPrimary
+                      fontSize="16px"
+                      minWidth="120px"
+                      height="36px"
+                      background={typeOfRent === 'Sell' ? '#00A9B0' : '#FAFAFA'}
+                      color={typeOfRent === 'Sell' ? '#FAFAFA' : '#00A9B0'}
+                      type="button"
+                      marginRight="0"
+                      onClick={() => setTypeOfPeriodype('Sell')}
+                    >
+                      Sell
+                    </ButtonPrimary>
                   </>
                 </Li>
                 <Li>
@@ -457,6 +602,7 @@ export function AddingAdPage({ token }): JSX.Element {
                   </ul>
                   <div>
                     <ButtonPrimary
+                      onClick={() => onSelectAddAd()}
                       fontSize="16px"
                       minWidth="120px"
                       height="36px"

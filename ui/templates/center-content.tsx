@@ -16,10 +16,11 @@ export const CenterContent: StyledComponent<any, any> = styled.main`
   width: 100%;
   color: var(--canvas-text);
   // grid-area: main;
-  ${({ align, background }: any) => css`
+  ${({ align, background, marginTop }: any) => css`
     display: flex;
     justify-content: 'center';
     align-items: ${align ?? 'center'};
+    margin-top: ${marginTop};
     background-color: ${background ?? 'var(--canvas)'};
   `}
 `;
@@ -28,14 +29,16 @@ type CenterProps = {
   children: ReactNode;
   align?: any;
   background?: any;
+  marginTop?: any;
 };
 
 export const CenterContentTemplate = ({
   children,
   align,
   background,
+  marginTop,
 }: CenterProps): JSX.Element => (
-  <CenterContent align={align} background={background}>
+  <CenterContent align={align} background={background} marginTop={marginTop}>
     {children}
   </CenterContent>
 );

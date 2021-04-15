@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-nested-ternary */
 // import ErrorPage from 'next/error';
 // import { GetServerSideProps } from 'next';
@@ -28,6 +29,7 @@ import {
   Kitchen,
   Parking,
   Pool,
+  PhotoBox,
   Tv,
   LiName,
 } from '../../ui';
@@ -74,6 +76,7 @@ const LeftBlock = styled.div`
   background: #fff;
   padding: 0 24px 24px 24px;
   width: 66%;
+  // max-width: 877px;
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -156,6 +159,7 @@ const CardsWrap = styled.div`
     color: #4b4b4b;
   }
 `;
+const Gallery = styled.div``;
 
 function MyAdPage({ token, ad }) {
   // let iconName = foo ? bar : foobar;
@@ -193,15 +197,23 @@ function MyAdPage({ token, ad }) {
                   <Share />
                 </IconWrap>
               </FlexWrap>
-              <img alt="string" src="/images/Photo.svg" />
-              <div className="previewWrap">
-                <div className="photoPreview" />
-                <div className="photoPreview" />
-                <div className="photoPreview" />
-                <div className="photoPreview" />
-                <div className="photoPreview" />
-                <div className="photoPreview" />
-              </div>
+              <Gallery>
+                <PhotoBox
+                  src="/images/Photo.svg"
+                  alt="string"
+                  maxWidth="829px"
+                  maxHeight="466px"
+                  height="466px"
+                />)
+                <div className="previewWrap">
+                  <div className="photoPreview" />
+                  <div className="photoPreview" />
+                  <div className="photoPreview" />
+                  <div className="photoPreview" />
+                  <div className="photoPreview" />
+                  <div className="photoPreview" />
+                </div>
+              </Gallery>
               <BottomLine />
 
               <DescBlock>
@@ -361,6 +373,7 @@ function MyAdPage({ token, ad }) {
   );
 }
 
+// @ts-ignore
 export async function getServerSideProps({ req, _res, params }) {
   let formBody: any = [];
   const encodedKey = encodeURIComponent('id');

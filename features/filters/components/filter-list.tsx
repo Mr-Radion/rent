@@ -157,7 +157,7 @@ export const Filters = React.memo(({ page }: any) => {
             ))}
         </FilterNav>
       )}
-      <FilterList>
+      <FilterList >
         {selectedFilterNavigationPoint === 'Buy' && (
           <>
             <FilterTypeProperty
