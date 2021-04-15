@@ -83,7 +83,7 @@ export const SearchRun = () => {
       {router.pathname !== '/' && (
         <Input
           width="620px"
-          margin="0 16px 0 0"
+          margin="11px 16px 0 0"
           type="text"
           placeholder="Enter ID or Property title here..."
           height="38px"
@@ -95,7 +95,8 @@ export const SearchRun = () => {
         fontSize="18px"
         // width="9.5rem"
         minWidth="152px"
-        height="3.314rem"
+        marginTop="11px"
+        height="2.314rem"
         color="#F1F1F2"
         background="linear-gradient(70.2deg, #00A9B0 0%, #76DFC7 100%)"
         onClick={onClickSearch}

@@ -26,8 +26,9 @@ import { filterPropertyItems, filterDistrictItems } from '../../features/filters
 import { Filters } from '../../features/filters/components';
 
 const SearchBox = styled.div`
-  margin-left: auto;
+  // margin-left: auto;
   padding: 20px 0;
+  display: flex;
 `;
 
 const Search = styled.div`

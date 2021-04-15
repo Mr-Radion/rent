@@ -101,6 +101,61 @@ const FilterList = styled.div`
   }
 
   `}
+  ${page &&
+    css`
+  display: grid;
+  margin-top: 16px;
+  grid-template-columns: repeat(5, 1fr);
+    max-width: 40%;
+    grid-gap: 1rem;
+  // box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+  > div .label button {
+    // border: 1px solid #bcbabe;
+    // border-right: none;
+    height: 38px;
+    background: #fff;
+    border-radius: 8px;
+    border: 2px solid #A1D6E2;
+    // border-top: none;
+    // border-bottom: none;
+  }
+  > div:first-child .label button {
+    // border-top-left-radius: 8px;
+    // border-bottom-left-radius: 8px;
+    // border-left: 2px solid transparent;
+    @media (max-width: 768px) {
+      background: #fff;
+    }
+  }
+  > div:nth-child(n+4):nth-child(-n+6) .label button {
+    @media (max-width: 768px) {
+      display: none;
+      }
+    }
+  }
+
+  > div:last-child .label button {
+    // border-right: 2px solid #bcbabe;
+    // border-top-right-radius: 8px;
+    // border-bottom-right-radius: 8px;
+    // border-right: 2px solid transparent;
+    @media (max-width: 768px) {
+      background: #fff;
+    }
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 1rem;
+    > div .label button {
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: #f1f1f2;
+      border-top: none;
+      border-bottom: none;
+    }
+  }
+
+  `}
   `}
 `;
 
