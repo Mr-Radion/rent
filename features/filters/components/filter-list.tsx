@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import shortid from 'shortid';
 
 import {
@@ -46,7 +46,14 @@ const FilterNav = styled.div`
   }
 `;
 
+type FilterListProps = {
+  page: string;
+};
+
 const FilterList = styled.div`
+  ${({ page }: FilterListProps) => css`
+    ${!page &&
+    css`
   display: flex;
   margin-top: 16px;
   // box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
@@ -92,6 +99,9 @@ const FilterList = styled.div`
       border-bottom: none;
     }
   }
+
+  `}
+  `}
 `;
 
 export const Filters = React.memo(({ page }: any) => {
@@ -157,7 +167,7 @@ export const Filters = React.memo(({ page }: any) => {
             ))}
         </FilterNav>
       )}
-      <FilterList>
+      <FilterList page={page}>
         {selectedFilterNavigationPoint === 'Buy' && (
           <>
             <FilterTypeProperty
