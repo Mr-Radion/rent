@@ -101,7 +101,7 @@ const FilterList = styled.div`
   }
 
   `}
-  ${page &&
+    ${page &&
     css`
   display: grid;
   margin-top: 16px;

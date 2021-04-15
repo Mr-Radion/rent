@@ -11,6 +11,8 @@ type PropsHead = {
   textDecorationLine: string;
   borderBottom: string;
   textAlign: string;
+  marginTop: string;
+  paddingTop: string;
 };
 // export const TextField: StyledComponent<any, any> = styled.input`
 //   border-color: #7a7a7a;
@@ -53,6 +55,8 @@ export const H1: StyledComponent<any, any> = styled.h1(
 
 export const H2: StyledComponent<any, any> = styled.h2(
   (props: PropsHead): any => ({
+    marginTop: `${props.marginTop}`,
+    paddingTop: `${props.paddingTop}`,
     fontWeight: `${props.fontWeight || 'normal'}`,
     lineHeight: `${props.lineHeight || '100%'}`,
     margin: `${props.margin || '0'}`,
