@@ -4,38 +4,40 @@ import { search_result } from '../../lib/mock-data/db.json';
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const { body, method } = req;
 
-  const adName = p => (body?.q ? p?.ad_name.trim() === body?.q.trim() : true);
+  const adName = p =>
+    body?.q ? p?.ad_name.trim().toLowerCase() === body?.q.trim().toLowerCase() : true;
   const locationDistrict = p =>
     body?.location && body?.location !== 'all cities'
       ? p?.location.district === body?.location
       : true;
   const typeProperty = p => (body?.typeProperty ? p?.type_property === body?.typeProperty : true);
+
   const price = p => {
     if (body?.minprice && !body?.maxprice) {
-      console.log('Первое');
-      return p?.price >= body?.minprice;
+      return p?.price >= Number(body?.minprice);
     }
     if (body?.maxprice && !body?.minprice) {
-      console.log('Второе');
-      return p?.price <= body?.maxprice;
+      return p?.price <= Number(body?.maxprice);
     }
-    if (body?.maxprice && body?.maxprice) {
-      console.log('Третье');
-      return p?.price >= body?.minprice && p?.price <= body?.maxprice;
+    if (body?.minprice && body?.maxprice) {
+      return p?.price >= Number(body?.minprice) && p?.price <= Number(body?.maxprice);
     }
     return true;
   };
-  // const price = p => {
-  //   if (body?.minprice && !body?.maxprice) {
-  //     // console.log(!body?.minprice);
-  //     return p?.price >= body?.minprice;
-  //   }
-  //   return true;
-  // };
-  const square = p =>
-    body?.minsquare || body?.maxsquare
-      ? p?.square >= body?.minsquare && p?.square <= body?.maxsquare
-      : true;
+
+  const square = p => {
+    if (body?.minsquare && !body?.maxsquare) {
+      return p?.square >= Number(body?.minsquare);
+    }
+    if (body?.maxsquare && !body?.minsquare) {
+      return p?.square <= Number(body?.maxsquare);
+    }
+    if (body?.minsquare && body?.maxsquare) {
+      return p?.square >= Number(body?.minsquare) && p?.square <= Number(body?.maxsquare);
+    }
+    return true;
+  };
+
   const filterRoom1 = search_result.filter(p =>
     body?.room1 ? p?.room1 === Number(body?.room1) : false,
   );
@@ -63,32 +65,28 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
   }
   const bedroomsFiltered = unique(bedroomsSummation);
 
-  // console.log(filterRoom5);
   const bedroomsType = p =>
     body?.bedroomsType
       ? p?.type_bedrooms >= body?.bedroomsType[0].toUpperCase() + body?.bedroomsType.slice(1)
       : true;
 
-  const filtered = bedroomsFiltered.filter(p => {
-    // console.log(price(p));
+  const filterData = bedroomsFiltered.length !== 0 ? bedroomsFiltered : search_result;
+
+  const filtered = filterData.filter(p => {
     return (
       adName(p) &&
       locationDistrict(p) &&
-      price(p) &&
       typeProperty(p) &&
       bedroomsType(p) &&
-      square(p)
+      square(p) &&
+      price(p)
     );
   });
-
-  // Todo
-  // Прайсы и площади не работают в том состоянии, котором они сейчас находятся, исправить алгоритм по их фильтру и по площадям
-  // Если указано значение только от или только до учесть для прайса и площадей.
 
   switch (method) {
     case 'POST':
       if (filtered.length > 0) {
-        res.status(200).json({ results: bedroomsFiltered });
+        res.status(200).json({ results: filtered && filtered });
       } else {
         res.status(404).json({ message: 'Search results: not found.' });
       }

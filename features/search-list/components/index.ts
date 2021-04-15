@@ -1,1 +1,1 @@
-export { SearchCart, SearchBar } from './search-cart';
+export { SearchRun } from './search-bar';

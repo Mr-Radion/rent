@@ -802,7 +802,7 @@
   "search_result": [
     {
       "id": 1,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
@@ -827,7 +827,7 @@
     },
     {
       "id": 2,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1353&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New house",
       "location": {
@@ -852,7 +852,7 @@
     },
     {
       "id": 3,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New commercial",
       "location": {
@@ -877,7 +877,7 @@
     },
     {
       "id": 4,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1527030280862-64139fba04ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New land",
       "location": {
@@ -901,7 +901,7 @@
     },
     {
       "id": 5,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
@@ -925,7 +925,7 @@
     },
     {
       "id": 6,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1603077864615-538e955d1ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=564&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
@@ -943,13 +943,13 @@
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
       "language": ["English", "Russian"],
-      "reliability_status": "Trusted agent",
+      "reliability_status": "Owner",
       "telephone_number": "3572205256",
       "publication_date": "01/01/2021"
     },
     {
       "id": 7,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
@@ -967,13 +967,13 @@
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
       "language": ["English", "Russian"],
-      "reliability_status": "Trusted agent",
+      "reliability_status": "Owner",
       "telephone_number": "3572205256",
       "publication_date": "01/01/2021"
     },
     {
       "id": 8,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1353&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
@@ -991,13 +991,13 @@
       "price": 1000000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
       "language": ["English", "Russian"],
-      "reliability_status": "Trusted agent",
+      "reliability_status": "Owner",
       "telephone_number": "3572205256",
       "publication_date": "01/01/2021"
     },
     {
       "id": 9,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
@@ -1015,13 +1015,13 @@
       "price": 100000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
       "language": ["English", "Russian"],
-      "reliability_status": "Trusted agent",
+      "reliability_status": "Owner",
       "telephone_number": "3572205256",
       "publication_date": "01/01/2021" 
     },
     {
       "id": 10,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1527030280862-64139fba04ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
@@ -1039,13 +1039,13 @@
       "price": 1545000,
       "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
       "language": ["English", "Russian"],
-      "reliability_status": "Trusted agent",
+      "reliability_status": "Owner",
       "telephone_number": "3572205256",
       "publication_date": "01/01/2021"
     },
     {
       "id": 11,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {
@@ -1069,7 +1069,151 @@
     },
     {
       "id": 12,
-      "image_url": "https:www.cdn/...",
+      "image_url": "https://images.unsplash.com/photo-1603077864615-538e955d1ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=564&q=80",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 6,
+      "room1": 0,
+      "room2": 0,
+      "room3": 0,
+      "room4": 0,
+      "room5": 1,
+      "square": 70,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 13,
+      "image_url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Nicosia", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 4,
+      "room1": 0,
+      "room2": 0,
+      "room3": 0,
+      "room4": 1,
+      "room5": 0,
+      "square": 346,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Owner",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 14,
+      "image_url": "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1353&q=80",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 2,
+      "room1": 0,
+      "room2": 1,
+      "room3": 0,
+      "room4": 0,
+      "room5": 0,
+      "square": 72,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Owner",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 15,
+      "image_url": "https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 7,
+      "room1": 0,
+      "room2": 0,
+      "room3": 0,
+      "room4": 0,
+      "room5": 1,
+      "square": 27,
+      "price": 100000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Owner",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021" 
+    },
+    {
+      "id": 16,
+      "image_url": "https://images.unsplash.com/photo-1527030280862-64139fba04ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 3,
+      "room1": 0,
+      "room2": 0,
+      "room3": 1,
+      "room4": 0,
+      "room5": 0,
+      "square": 76,
+      "price": 1545000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Owner",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 17,
+      "image_url": "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Larnaca", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 1,
+      "room1": 1,
+      "room2": 0,
+      "room3": 0,
+      "room4": 0,
+      "room5": 0,
+      "square": 122,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
+    },
+    {
+      "id": 18,
+      "image_url": "https://images.unsplash.com/photo-1603077864615-538e955d1ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=564&q=80",
       "image_icon": "https:www.cdn/...",
       "ad_name": "New apartment",
       "location": {

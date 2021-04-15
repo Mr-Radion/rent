@@ -158,24 +158,19 @@ const CardsWrap = styled.div`
 `;
 
 function MyAdPage({ token, ad }) {
-  const [tokenT, setToken] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch('/api/auth')
-      .then(response => response.json())
-      .then(res => setToken(res.success));
-  }, []);
-
   // let iconName = foo ? bar : foobar;
 
   // const router = useRouter();
-  // console.log(token, ad, ad.description);
-  if (!token && !tokenT) {
+
+  console.log(ad);
+
+  if (!ad) {
     return <PageNotFound />;
   }
+
   return (
     <MainTemplate
-      header={<Header userNavMenu={navMainData} token={token || tokenT} />}
+      header={<Header userNavMenu={navMainData} token={token} />}
       footer={
         <Footer menuItemCities={filterDistrictItems} menuItemTypeProperty={filterPropertyItems} />
       }
@@ -381,7 +376,7 @@ export async function getServerSideProps({ req, _res, params }) {
     body: formBody,
   });
   const ad = await response.json();
-  return { props: { token: req.cookies.fcd || '', ad: ad[0] } };
+  return { props: { token: req.cookies.fcd || '', ad: ad.length !== 0 ? ad[0] : '' } };
 }
 
 export default MyAdPage;

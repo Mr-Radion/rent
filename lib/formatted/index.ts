@@ -9,6 +9,10 @@ export const numberIntervalsFormatted = (numbers: string | number): any => {
   const arr = [...String(numbers)];
   if (String(numbers).length === 4) arr.splice(1, 0, ' ');
   if (String(numbers).length === 5) arr.splice(2, 0, ' ');
+  if (String(numbers).length === 7) {
+    arr.splice(1, 0, ' ');
+    arr.splice(5, 0, ' ');
+  }
   return arr.join('');
 };
 

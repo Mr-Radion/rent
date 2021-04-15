@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { StyledComponent } from 'styled-components';
 import classNames from 'classnames';
+
 import { useOnClickOutside } from '../../../lib/custom-hooks';
 import { sortedAscending, numberDivisionFormatted } from '../../../lib/formatted';
 import {
@@ -25,6 +26,7 @@ type FilterBedroomsProps = {
   items: any;
   activeLabelCounter: number[];
   activeLabelType: string[];
+  page: string;
 };
 
 export const FilterBedrooms: React.FC<FilterBedroomsProps> = React.memo(
@@ -34,6 +36,7 @@ export const FilterBedrooms: React.FC<FilterBedroomsProps> = React.memo(
     items,
     activeLabelCounter,
     activeLabelType,
+    page,
   }) => {
     const filterRef = React.useRef();
     const [visiblePopup, setVisiblePopup] = React.useState<boolean>(false);
@@ -60,7 +63,11 @@ export const FilterBedrooms: React.FC<FilterBedroomsProps> = React.memo(
     };
 
     return (
-      <SelectFilterType ref={filterRef} visiblePopup={visiblePopup} arrowDefault>
+      <SelectFilterType
+        ref={filterRef}
+        visiblePopup={visiblePopup}
+        arrowDefault={!page ? 'arrowDefault' : ''}
+      >
         <div className="label">
           <button
             onClick={() => setVisiblePopup(!visiblePopup)}
@@ -78,10 +85,10 @@ export const FilterBedrooms: React.FC<FilterBedroomsProps> = React.memo(
                 items.counter.map((num: any, index: number) => (
                   <OptionButton onClick={() => onSelectItemCounter(num)} key={`${num}`}>
                     <ButtonBedrooms
-                      fontSize="16px"
+                      fontSize={!page ? '16px' : ''}
                       type="submit"
-                      width="36px"
-                      height="36px"
+                      width={!page ? '36px' : ''}
+                      height={!page ? '36px' : ''}
                       className={classNames({
                         active: activeLabelCounter.includes(num),
                       })}
