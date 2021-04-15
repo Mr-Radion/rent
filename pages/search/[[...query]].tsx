@@ -145,7 +145,7 @@ function SearchResultPage({ token }) {
         <Search>
           <SearchBox>
             <Filters page="searchList" />
-            <SearchRun />
+            <SearchRun page="searchList" />
           </SearchBox>
           <div className="head">
             <H1 margin="26px 0 22px 0 ">Rent 1,2 bedroom appartments in Limassol</H1>

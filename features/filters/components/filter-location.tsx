@@ -62,7 +62,7 @@ export const FilterLocation: React.FC<FilterLocationProps> = React.memo(
         arrowDefault={!page ? 'arrowDefault' : ''}
         flexBasis="40%"
         tablet="100%"
-        minWidth="250px"
+        minWidth={page ? '111px' : '250px'}
       >
         <div className="label label__location">
           <button

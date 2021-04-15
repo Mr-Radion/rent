@@ -67,6 +67,7 @@ export const FilterBedrooms: React.FC<FilterBedroomsProps> = React.memo(
         ref={filterRef}
         visiblePopup={visiblePopup}
         arrowDefault={!page ? 'arrowDefault' : ''}
+        minWidth={page ? '149px' : '250px'}
       >
         <div className="label">
           <button

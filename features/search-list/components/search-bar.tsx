@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { ButtonPrimary, Input } from '../../../ui';
 
-export const SearchRun = () => {
+export const SearchRun = ({ page }: any) => {
   const router = useRouter();
   const {
     filterLocationBy,
@@ -95,8 +95,8 @@ export const SearchRun = () => {
         fontSize="18px"
         // width="9.5rem"
         minWidth="152px"
-        marginTop="11px"
-        height="2.314rem"
+        marginTop={page ? '11px' : ''}
+        height={page ? '2.314rem' : '3.314rem'}
         color="#F1F1F2"
         background="linear-gradient(70.2deg, #00A9B0 0%, #76DFC7 100%)"
         onClick={onClickSearch}
