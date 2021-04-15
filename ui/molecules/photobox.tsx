@@ -12,6 +12,7 @@ type PhotoProps = {
   marginLeft?: string;
   maxWidth?: string;
   maxHeight?: string;
+  borderRadius?: string;
 };
 
 const PhotoBoxStyled: StyledComponent<any, any> = styled.div`
@@ -31,13 +32,16 @@ const PhotoBoxStyled: StyledComponent<any, any> = styled.div`
     margin,
     maxWidth,
     maxHeight,
+    borderRadius,
   }: PhotoProps) => css`
+    overflow-y: hidden;
     cursor: pointer;
     font-size: ${fontSize};
     width: ${width};
     height: ${height};
     color: ${color};
     background: ${background};
+    border-radius: ${borderRadius};
     background-color: ${backgroundColor};
     margin-right: ${marginRight};
     margin-left: ${marginLeft};
@@ -66,6 +70,7 @@ export const PhotoBox = ({
   marginLeft,
   maxWidth,
   maxHeight,
+  borderRadius,
 }: any) => (
   <PhotoBoxStyled
     height={height}
@@ -73,9 +78,10 @@ export const PhotoBox = ({
     width={width}
     margin={margin}
     marginLeft={marginLeft}
+    borderRadius={borderRadius}
     maxWidth={maxWidth}
     maxHeight={maxHeight}
   >
-    <img src={src} alt={alt} loading="lazy" decoding="async" className={className} />;
+    <img src={src} alt={alt} loading="lazy" decoding="async" className={className} />
   </PhotoBoxStyled>
 );
