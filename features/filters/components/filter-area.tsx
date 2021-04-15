@@ -91,7 +91,7 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
                 borderRadius="4px"
                 paddingRight="24px"
               />
-              <span>м²</span>
+              <span>m²</span>
             </span>
             <span>
               <NumberField
@@ -108,7 +108,7 @@ export const FilterArea: React.FC<FilterAreaProps> = React.memo(({ onClickFilter
                 borderRadius="4px"
                 paddingRight="24px"
               />
-              <span>м²</span>
+              <span>m²</span>
             </span>
           </AreaWrapper>
         </div>
