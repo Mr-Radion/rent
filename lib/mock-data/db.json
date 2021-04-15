@@ -1234,6 +1234,30 @@
       "reliability_status": "Trusted agent",
       "telephone_number": "3572205256",
       "publication_date": "01/01/2021"
+    },
+    {
+      "id": 19,
+      "image_url": "https://images.unsplash.com/photo-1603077864615-538e955d1ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=564&q=80",
+      "image_icon": "https:www.cdn/...",
+      "ad_name": "New apartment",
+      "location": {
+        "district": "Limassol", 
+        "zone": "Oroklini Tourist Area"
+      },
+      "type_property": "apartment",
+      "bedrooms": 6,
+      "room1": 0,
+      "room2": 0,
+      "room3": 0,
+      "room4": 0,
+      "room5": 1,
+      "square": 70,
+      "price": 1000000,
+      "exposition": "Luxury apartment for sale in Strovolos, Nicosia. The building is comprised of two floors with total of 6 apartments (3 apartments per floor) and features high standards and modern design.The construction is according to static calculations and antiseismic specifications.",
+      "language": ["English", "Russian"],
+      "reliability_status": "Trusted agent",
+      "telephone_number": "3572205256",
+      "publication_date": "01/01/2021"
     }
   ]
 }
